@@ -66,12 +66,13 @@ Partial Class Page_Connexion
         '
         'Connexion
         '
+        Me.Connexion.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Connexion.Location = New System.Drawing.Point(100, 114)
         Me.Connexion.Name = "Connexion"
         Me.Connexion.Size = New System.Drawing.Size(132, 29)
         Me.Connexion.TabIndex = 6
         Me.Connexion.Text = "Connexion"
-        Me.Connexion.UseVisualStyleBackColor = True
+        Me.Connexion.UseVisualStyleBackColor = False
         '
         'Page_Connexion
         '

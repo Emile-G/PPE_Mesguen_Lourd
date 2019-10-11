@@ -1,7 +1,16 @@
 ﻿Public Class AC11
 
     Private Sub AC11_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        'TODO: cette ligne de code charge les données dans la table 'DataSet11.DataTable2'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-        Me.DataTable2TableAdapter.Fill(Me.DataSet11.DataTable2)
+        'TODO: cette ligne de code charge les données dans la table 'DataSet1.DataTable1'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+        'TODO: cette ligne de code charge les données dans la table 'DataSet1.DataTable1'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+        'TODO: cette ligne de code charge les données dans la table 'DataSet1.DataTable1'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
+        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+
+    End Sub
+
+    Private Sub Supprimer_Click(sender As System.Object, e As System.EventArgs) Handles Supprimer.Click
+
     End Sub
 End Class

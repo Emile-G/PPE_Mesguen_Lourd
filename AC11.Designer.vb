@@ -23,80 +23,73 @@ Partial Class AC11
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ListeTournees = New System.Windows.Forms.DataGridView()
-        Me.DataTable2BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LabelTournee = New System.Windows.Forms.Label()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TOURNEEBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Supprimer = New System.Windows.Forms.Button()
         Me.DataSet1 = New PPE_Mesguen_Lourd.DataSet1()
-        Me.TOURNEETableAdapter = New PPE_Mesguen_Lourd.DataSet1TableAdapters.TOURNEETableAdapter()
-        Me.DataTable1BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataTable1TableAdapter = New PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter()
-        Me.TRNNUMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CHFPRENOMDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.REMORQUEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TRNCOMMENTAIREDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TRNDTEDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TRNPECCHAUFFEURDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VEHIMMATDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ETAPEDEPARTDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ETAPEARRIVERDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataSet11 = New PPE_Mesguen_Lourd.DataSet1()
-        Me.DataTable2BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataTable2TableAdapter = New PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable2TableAdapter()
+        Me.NTourneeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NomDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RemorqueDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CommentaireDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DepartDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ArriverDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.ListeTournees, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TOURNEEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable2BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ListeTournees
         '
         Me.ListeTournees.AllowUserToAddRows = False
         Me.ListeTournees.AllowUserToDeleteRows = False
+        Me.ListeTournees.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ListeTournees.AutoGenerateColumns = False
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListeTournees.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.ListeTournees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ListeTournees.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TRNNUMDataGridViewTextBoxColumn, Me.CHFPRENOMDataGridViewTextBoxColumn, Me.REMORQUEDataGridViewTextBoxColumn, Me.TRNCOMMENTAIREDataGridViewTextBoxColumn, Me.TRNDTEDataGridViewTextBoxColumn, Me.TRNPECCHAUFFEURDataGridViewTextBoxColumn, Me.VEHIMMATDataGridViewTextBoxColumn, Me.ETAPEDEPARTDataGridViewTextBoxColumn, Me.ETAPEARRIVERDataGridViewTextBoxColumn})
-        Me.ListeTournees.DataSource = Me.DataTable2BindingSource1
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ListeTournees.DefaultCellStyle = DataGridViewCellStyle6
-        Me.ListeTournees.Location = New System.Drawing.Point(171, 39)
+        Me.ListeTournees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.ListeTournees.BackgroundColor = System.Drawing.SystemColors.ControlLight
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListeTournees.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.ListeTournees.ColumnHeadersHeight = 24
+        Me.ListeTournees.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NTourneeDataGridViewTextBoxColumn, Me.NomDataGridViewTextBoxColumn, Me.RemorqueDataGridViewTextBoxColumn, Me.CommentaireDataGridViewTextBoxColumn, Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn, Me.DepartDataGridViewTextBoxColumn, Me.ArriverDataGridViewTextBoxColumn})
+        Me.ListeTournees.DataSource = Me.DataTable1BindingSource
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ListeTournees.DefaultCellStyle = DataGridViewCellStyle2
+        Me.ListeTournees.GridColor = System.Drawing.SystemColors.Control
+        Me.ListeTournees.Location = New System.Drawing.Point(12, 39)
         Me.ListeTournees.Name = "ListeTournees"
         Me.ListeTournees.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListeTournees.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListeTournees.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListeTournees.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ListeTournees.RowsDefaultCellStyle = DataGridViewCellStyle8
-        Me.ListeTournees.Size = New System.Drawing.Size(934, 335)
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ListeTournees.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.ListeTournees.Size = New System.Drawing.Size(1250, 398)
         Me.ListeTournees.TabIndex = 0
         '
         'LabelTournee
@@ -110,105 +103,79 @@ Partial Class AC11
         Me.LabelTournee.Text = "Liste des Tournées"
         Me.LabelTournee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TOURNEEBindingSource
+        'Supprimer
         '
-        Me.TOURNEEBindingSource.DataMember = "TOURNEE"
-        Me.TOURNEEBindingSource.DataSource = Me.DataSet1
+        Me.Supprimer.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Supprimer.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Supprimer.Location = New System.Drawing.Point(12, 455)
+        Me.Supprimer.Name = "Supprimer"
+        Me.Supprimer.Size = New System.Drawing.Size(118, 49)
+        Me.Supprimer.TabIndex = 2
+        Me.Supprimer.Text = "Supprimer"
+        Me.Supprimer.UseVisualStyleBackColor = False
         '
         'DataSet1
         '
         Me.DataSet1.DataSetName = "DataSet1"
         Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TOURNEETableAdapter
+        'DataTable1BindingSource
         '
-        Me.TOURNEETableAdapter.ClearBeforeFill = True
-        '
-        'DataTable1BindingSource1
-        '
-        Me.DataTable1BindingSource1.DataMember = "DataTable1"
-        Me.DataTable1BindingSource1.DataSource = Me.DataSet1
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.DataSet1
         '
         'DataTable1TableAdapter
         '
         Me.DataTable1TableAdapter.ClearBeforeFill = True
         '
-        'TRNNUMDataGridViewTextBoxColumn
+        'NTourneeDataGridViewTextBoxColumn
         '
-        Me.TRNNUMDataGridViewTextBoxColumn.DataPropertyName = "TRNNUM"
-        Me.TRNNUMDataGridViewTextBoxColumn.HeaderText = "TRNNUM"
-        Me.TRNNUMDataGridViewTextBoxColumn.Name = "TRNNUMDataGridViewTextBoxColumn"
-        Me.TRNNUMDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NTourneeDataGridViewTextBoxColumn.DataPropertyName = "N° Tournee"
+        Me.NTourneeDataGridViewTextBoxColumn.HeaderText = "N° Tournee"
+        Me.NTourneeDataGridViewTextBoxColumn.Name = "NTourneeDataGridViewTextBoxColumn"
+        Me.NTourneeDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'CHFPRENOMDataGridViewTextBoxColumn
+        'NomDataGridViewTextBoxColumn
         '
-        Me.CHFPRENOMDataGridViewTextBoxColumn.DataPropertyName = "CHFPRENOM"
-        Me.CHFPRENOMDataGridViewTextBoxColumn.HeaderText = "CHFPRENOM"
-        Me.CHFPRENOMDataGridViewTextBoxColumn.Name = "CHFPRENOMDataGridViewTextBoxColumn"
-        Me.CHFPRENOMDataGridViewTextBoxColumn.ReadOnly = True
+        Me.NomDataGridViewTextBoxColumn.DataPropertyName = "Nom"
+        Me.NomDataGridViewTextBoxColumn.HeaderText = "Nom"
+        Me.NomDataGridViewTextBoxColumn.Name = "NomDataGridViewTextBoxColumn"
+        Me.NomDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'REMORQUEDataGridViewTextBoxColumn
+        'RemorqueDataGridViewTextBoxColumn
         '
-        Me.REMORQUEDataGridViewTextBoxColumn.DataPropertyName = "REMORQUE"
-        Me.REMORQUEDataGridViewTextBoxColumn.HeaderText = "REMORQUE"
-        Me.REMORQUEDataGridViewTextBoxColumn.Name = "REMORQUEDataGridViewTextBoxColumn"
-        Me.REMORQUEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.RemorqueDataGridViewTextBoxColumn.DataPropertyName = "Remorque"
+        Me.RemorqueDataGridViewTextBoxColumn.HeaderText = "Remorque"
+        Me.RemorqueDataGridViewTextBoxColumn.Name = "RemorqueDataGridViewTextBoxColumn"
+        Me.RemorqueDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'TRNCOMMENTAIREDataGridViewTextBoxColumn
+        'CommentaireDataGridViewTextBoxColumn
         '
-        Me.TRNCOMMENTAIREDataGridViewTextBoxColumn.DataPropertyName = "TRNCOMMENTAIRE"
-        Me.TRNCOMMENTAIREDataGridViewTextBoxColumn.HeaderText = "TRNCOMMENTAIRE"
-        Me.TRNCOMMENTAIREDataGridViewTextBoxColumn.Name = "TRNCOMMENTAIREDataGridViewTextBoxColumn"
-        Me.TRNCOMMENTAIREDataGridViewTextBoxColumn.ReadOnly = True
+        Me.CommentaireDataGridViewTextBoxColumn.DataPropertyName = "Commentaire"
+        Me.CommentaireDataGridViewTextBoxColumn.HeaderText = "Commentaire"
+        Me.CommentaireDataGridViewTextBoxColumn.Name = "CommentaireDataGridViewTextBoxColumn"
+        Me.CommentaireDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'TRNDTEDataGridViewTextBoxColumn
+        'ImmatriculationVéhiculeDataGridViewTextBoxColumn
         '
-        Me.TRNDTEDataGridViewTextBoxColumn.DataPropertyName = "TRNDTE"
-        Me.TRNDTEDataGridViewTextBoxColumn.HeaderText = "TRNDTE"
-        Me.TRNDTEDataGridViewTextBoxColumn.Name = "TRNDTEDataGridViewTextBoxColumn"
-        Me.TRNDTEDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn.DataPropertyName = "Immatriculation véhicule"
+        Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn.HeaderText = "Immatriculation véhicule"
+        Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn.Name = "ImmatriculationVéhiculeDataGridViewTextBoxColumn"
+        Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'TRNPECCHAUFFEURDataGridViewTextBoxColumn
+        'DepartDataGridViewTextBoxColumn
         '
-        Me.TRNPECCHAUFFEURDataGridViewTextBoxColumn.DataPropertyName = "TRNPECCHAUFFEUR"
-        Me.TRNPECCHAUFFEURDataGridViewTextBoxColumn.HeaderText = "TRNPECCHAUFFEUR"
-        Me.TRNPECCHAUFFEURDataGridViewTextBoxColumn.Name = "TRNPECCHAUFFEURDataGridViewTextBoxColumn"
-        Me.TRNPECCHAUFFEURDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartDataGridViewTextBoxColumn.DataPropertyName = "Depart"
+        Me.DepartDataGridViewTextBoxColumn.HeaderText = "Depart"
+        Me.DepartDataGridViewTextBoxColumn.Name = "DepartDataGridViewTextBoxColumn"
+        Me.DepartDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'VEHIMMATDataGridViewTextBoxColumn
+        'ArriverDataGridViewTextBoxColumn
         '
-        Me.VEHIMMATDataGridViewTextBoxColumn.DataPropertyName = "VEHIMMAT"
-        Me.VEHIMMATDataGridViewTextBoxColumn.HeaderText = "VEHIMMAT"
-        Me.VEHIMMATDataGridViewTextBoxColumn.Name = "VEHIMMATDataGridViewTextBoxColumn"
-        Me.VEHIMMATDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ETAPEDEPARTDataGridViewTextBoxColumn
-        '
-        Me.ETAPEDEPARTDataGridViewTextBoxColumn.DataPropertyName = "ETAPE_DEPART"
-        Me.ETAPEDEPARTDataGridViewTextBoxColumn.HeaderText = "ETAPE_DEPART"
-        Me.ETAPEDEPARTDataGridViewTextBoxColumn.Name = "ETAPEDEPARTDataGridViewTextBoxColumn"
-        Me.ETAPEDEPARTDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ETAPEARRIVERDataGridViewTextBoxColumn
-        '
-        Me.ETAPEARRIVERDataGridViewTextBoxColumn.DataPropertyName = "ETAPE_ARRIVER"
-        Me.ETAPEARRIVERDataGridViewTextBoxColumn.HeaderText = "ETAPE_ARRIVER"
-        Me.ETAPEARRIVERDataGridViewTextBoxColumn.Name = "ETAPEARRIVERDataGridViewTextBoxColumn"
-        Me.ETAPEARRIVERDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DataSet11
-        '
-        Me.DataSet11.DataSetName = "DataSet1"
-        Me.DataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataTable2BindingSource1
-        '
-        Me.DataTable2BindingSource1.DataMember = "DataTable2"
-        Me.DataTable2BindingSource1.DataSource = Me.DataSet11
-        '
-        'DataTable2TableAdapter
-        '
-        Me.DataTable2TableAdapter.ClearBeforeFill = True
+        Me.ArriverDataGridViewTextBoxColumn.DataPropertyName = "Arriver"
+        Me.ArriverDataGridViewTextBoxColumn.HeaderText = "Arriver"
+        Me.ArriverDataGridViewTextBoxColumn.Name = "ArriverDataGridViewTextBoxColumn"
+        Me.ArriverDataGridViewTextBoxColumn.ReadOnly = True
         '
         'AC11
         '
@@ -216,40 +183,29 @@ Partial Class AC11
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
         Me.ClientSize = New System.Drawing.Size(1274, 614)
+        Me.Controls.Add(Me.Supprimer)
         Me.Controls.Add(Me.LabelTournee)
         Me.Controls.Add(Me.ListeTournees)
         Me.Name = "AC11"
         Me.Text = "AC11"
         CType(Me.ListeTournees, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable2BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TOURNEEBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable2BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ListeTournees As System.Windows.Forms.DataGridView
     Friend WithEvents DataSet1 As PPE_Mesguen_Lourd.DataSet1
-    Friend WithEvents TOURNEEBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents TOURNEETableAdapter As PPE_Mesguen_Lourd.DataSet1TableAdapters.TOURNEETableAdapter
     Friend WithEvents LabelTournee As System.Windows.Forms.Label
-    Friend WithEvents DataTable1BindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents DataTable2BindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents DataTable1BindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents DataTable1TableAdapter As PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter
-    Friend WithEvents TRNNUMDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CHFPRENOMDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents REMORQUEDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TRNCOMMENTAIREDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TRNDTEDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Supprimer As System.Windows.Forms.Button
     Friend WithEvents TRNPECCHAUFFEURDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents VEHIMMATDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ETAPEDEPARTDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ETAPEARRIVERDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataSet11 As PPE_Mesguen_Lourd.DataSet1
-    Friend WithEvents DataTable2BindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents DataTable2TableAdapter As PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable2TableAdapter
+    Friend WithEvents DataTable1BindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents DataTable1TableAdapter As PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter
+    Friend WithEvents NTourneeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NomDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RemorqueDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CommentaireDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ImmatriculationVéhiculeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DepartDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ArriverDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
