@@ -29,7 +29,8 @@
             AC11.ShowDialog()
             Me.Close()
         Catch ex As Odbc.OdbcException
-            MessageBox.Show(ex.Message)
+            ErreurCo.Text = ("Login ou mot de passe incorrecte" + ex.Message)
+            'MessageBox.Show(ex.Message)
         End Try
     End Sub
 End Class

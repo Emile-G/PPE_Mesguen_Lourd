@@ -27,6 +27,7 @@ Partial Class Page_Connexion
         Me.Login = New System.Windows.Forms.TextBox()
         Me.Password = New System.Windows.Forms.TextBox()
         Me.Connexion = New System.Windows.Forms.Button()
+        Me.ErreurCo = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -74,12 +75,22 @@ Partial Class Page_Connexion
         Me.Connexion.Text = "Connexion"
         Me.Connexion.UseVisualStyleBackColor = False
         '
+        'ErreurCo
+        '
+        Me.ErreurCo.AutoSize = True
+        Me.ErreurCo.ForeColor = System.Drawing.Color.Red
+        Me.ErreurCo.Location = New System.Drawing.Point(238, 122)
+        Me.ErreurCo.Name = "ErreurCo"
+        Me.ErreurCo.Size = New System.Drawing.Size(0, 13)
+        Me.ErreurCo.TabIndex = 7
+        '
         'Page_Connexion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
         Me.ClientSize = New System.Drawing.Size(343, 150)
+        Me.Controls.Add(Me.ErreurCo)
         Me.Controls.Add(Me.Connexion)
         Me.Controls.Add(Me.Password)
         Me.Controls.Add(Me.Login)
@@ -97,5 +108,6 @@ Partial Class Page_Connexion
     Friend WithEvents Login As System.Windows.Forms.TextBox
     Friend WithEvents Password As System.Windows.Forms.TextBox
     Friend WithEvents Connexion As System.Windows.Forms.Button
+    Friend WithEvents ErreurCo As System.Windows.Forms.Label
 
 End Class
