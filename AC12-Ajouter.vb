@@ -1,11 +1,9 @@
 ﻿Public Class AC12_Ajouter
-    Dim myConnection As New Odbc.OdbcConnection
     Dim myCommande As New Odbc.OdbcCommand
     Dim myReader As Odbc.OdbcDataReader
     Dim myAdapter As Odbc.OdbcDataAdapter
     Dim myBuilder As Odbc.OdbcCommandBuilder
 
-    Dim connString As String
     Dim comboSource As New Dictionary(Of String, String)()
 
     Dim key As String
@@ -26,7 +24,7 @@
         myCommande.Connection = myConnection
 
         'Recupération des noms des chauffeurs
-        Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR"
+        Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR ORDER BY CHFID ASC;"
         myCommande.CommandText = queryCHF
         myReader = myCommande.ExecuteReader
 
@@ -56,12 +54,12 @@
         value = DirectCast(ListeChauffeurs.SelectedItem, KeyValuePair(Of String, String)).Value
     End Sub
 
-    Private Sub Retour_Click_1(sender As System.Object, e As System.EventArgs) Handles Retour.Click
+    Private Sub Retour_Click(sender As System.Object, e As System.EventArgs) Handles Retour.Click
         AC11.Show()
         Me.Close()
     End Sub
 
-    Private Sub Valider_Click_1(sender As System.Object, e As System.EventArgs) Handles Valider.Click
+    Private Sub Valider_Click(sender As System.Object, e As System.EventArgs) Handles Valider.Click
         'Insertion de la tournée
 
         Dim Veh As String = ListeVehicules.Text.ToString
@@ -77,7 +75,6 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
 
         AC11.Show()
         Me.Close()
