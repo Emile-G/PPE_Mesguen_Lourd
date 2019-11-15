@@ -299,6 +299,24 @@
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        U_MESGUEN.ETAPE.ETPID AS "ID Etape", U_MESGUEN.LIEU.LIEUNOM AS "Nom Etape"
+FROM            U_MESGUEN.ETAPE, U_MESGUEN.LIEU</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID Etape" DataSetColumn="ID Etape" />
+              <Mapping SourceColumn="Nom Etape" DataSetColumn="Nom Etape" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -561,6 +579,26 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="VEHNOM" msprop:Generator_ColumnVarNameInTable="columnVEHNOM" msprop:Generator_ColumnPropNameInRow="VEHNOM" msprop:Generator_ColumnPropNameInTable="VEHNOMColumn" msprop:Generator_UserColumnName="VEHNOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_x0020_Etape" msprop:Generator_ColumnVarNameInTable="columnID_Etape" msprop:Generator_ColumnPropNameInRow="ID_Etape" msprop:Generator_ColumnPropNameInTable="ID_EtapeColumn" msprop:Generator_UserColumnName="ID Etape">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nom_x0020_Etape" msprop:Generator_ColumnVarNameInTable="columnNom_Etape" msprop:Generator_ColumnPropNameInRow="Nom_Etape" msprop:Generator_ColumnPropNameInTable="Nom_EtapeColumn" msprop:Generator_UserColumnName="Nom Etape" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="32" />

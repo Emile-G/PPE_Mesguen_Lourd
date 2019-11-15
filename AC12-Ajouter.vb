@@ -26,7 +26,7 @@
         myCommande.Connection = myConnection
 
         'Recupération des noms des chauffeurs
-        Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR"
+        Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR ORDER BY CHFID ASC;"
         myCommande.CommandText = queryCHF
         myReader = myCommande.ExecuteReader
 

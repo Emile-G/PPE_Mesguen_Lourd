@@ -22,6 +22,7 @@ Partial Class AC12_Modifier
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LabelDate = New System.Windows.Forms.Label()
         Me.LabelChauffeur = New System.Windows.Forms.Label()
         Me.LabelCommentaire = New System.Windows.Forms.Label()
@@ -37,6 +38,19 @@ Partial Class AC12_Modifier
         Me.Retour = New System.Windows.Forms.Button()
         Me.LabelEtapes = New System.Windows.Forms.Label()
         Me.Ajouter = New System.Windows.Forms.Button()
+        Me.Supprimer = New System.Windows.Forms.Button()
+        Me.Modifier = New System.Windows.Forms.Button()
+        Me.GrilleEtapes = New System.Windows.Forms.DataGridView()
+        Me.DataTable1BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet1 = New PPE_Mesguen_Lourd.DataSet1()
+        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataTable1TableAdapter = New PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter()
+        Me.DataTable1BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.GrilleEtapes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataTable1BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelDate
@@ -92,7 +106,7 @@ Partial Class AC12_Modifier
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(931, 32)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "AC12 - Ajouter une tournée"
+        Me.Label1.Text = "AC12 - Modifier une tournée"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         '
         'TRNDTE
@@ -170,12 +184,67 @@ Partial Class AC12_Modifier
         '
         'Ajouter
         '
-        Me.Ajouter.Location = New System.Drawing.Point(811, 210)
+        Me.Ajouter.Location = New System.Drawing.Point(594, 288)
         Me.Ajouter.Name = "Ajouter"
         Me.Ajouter.Size = New System.Drawing.Size(75, 23)
         Me.Ajouter.TabIndex = 20
         Me.Ajouter.Text = "Ajouter"
         Me.Ajouter.UseVisualStyleBackColor = True
+        '
+        'Supprimer
+        '
+        Me.Supprimer.Location = New System.Drawing.Point(844, 288)
+        Me.Supprimer.Name = "Supprimer"
+        Me.Supprimer.Size = New System.Drawing.Size(75, 23)
+        Me.Supprimer.TabIndex = 22
+        Me.Supprimer.Text = "Supprimer"
+        Me.Supprimer.UseVisualStyleBackColor = True
+        '
+        'Modifier
+        '
+        Me.Modifier.Location = New System.Drawing.Point(721, 288)
+        Me.Modifier.Name = "Modifier"
+        Me.Modifier.Size = New System.Drawing.Size(75, 23)
+        Me.Modifier.TabIndex = 23
+        Me.Modifier.Text = "Modifier"
+        Me.Modifier.UseVisualStyleBackColor = True
+        '
+        'GrilleEtapes
+        '
+        Me.GrilleEtapes.AllowUserToAddRows = False
+        Me.GrilleEtapes.AllowUserToDeleteRows = False
+        Me.GrilleEtapes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.GrilleEtapes.BackgroundColor = System.Drawing.SystemColors.ControlLight
+        Me.GrilleEtapes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GrilleEtapes.Location = New System.Drawing.Point(594, 109)
+        Me.GrilleEtapes.Name = "GrilleEtapes"
+        Me.GrilleEtapes.ReadOnly = True
+        Me.GrilleEtapes.Size = New System.Drawing.Size(325, 150)
+        Me.GrilleEtapes.TabIndex = 24
+        '
+        'DataTable1BindingSource1
+        '
+        Me.DataTable1BindingSource1.DataMember = "DataTable1"
+        Me.DataTable1BindingSource1.DataSource = Me.DataSet1
+        '
+        'DataSet1
+        '
+        Me.DataSet1.DataSetName = "DataSet1"
+        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataTable1BindingSource
+        '
+        Me.DataTable1BindingSource.DataMember = "DataTable1"
+        Me.DataTable1BindingSource.DataSource = Me.DataSet1
+        '
+        'DataTable1TableAdapter
+        '
+        Me.DataTable1TableAdapter.ClearBeforeFill = True
+        '
+        'DataTable1BindingSource2
+        '
+        Me.DataTable1BindingSource2.DataMember = "DataTable1"
+        Me.DataTable1BindingSource2.DataSource = Me.DataSet1
         '
         'AC12_Modifier
         '
@@ -183,6 +252,9 @@ Partial Class AC12_Modifier
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
         Me.ClientSize = New System.Drawing.Size(931, 477)
+        Me.Controls.Add(Me.GrilleEtapes)
+        Me.Controls.Add(Me.Modifier)
+        Me.Controls.Add(Me.Supprimer)
         Me.Controls.Add(Me.Ajouter)
         Me.Controls.Add(Me.LabelEtapes)
         Me.Controls.Add(Me.Retour)
@@ -199,7 +271,12 @@ Partial Class AC12_Modifier
         Me.Controls.Add(Me.LabelChauffeur)
         Me.Controls.Add(Me.LabelDate)
         Me.Name = "AC12_Modifier"
-        Me.Text = "AC12_Ajouter"
+        Me.Text = "AC12_Modifier"
+        CType(Me.GrilleEtapes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataTable1BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -219,4 +296,12 @@ Partial Class AC12_Modifier
     Friend WithEvents Retour As System.Windows.Forms.Button
     Friend WithEvents LabelEtapes As System.Windows.Forms.Label
     Friend WithEvents Ajouter As System.Windows.Forms.Button
+    Friend WithEvents DataSet1 As PPE_Mesguen_Lourd.DataSet1
+    Friend WithEvents DataTable1BindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents Supprimer As System.Windows.Forms.Button
+    Friend WithEvents Modifier As System.Windows.Forms.Button
+    Friend WithEvents GrilleEtapes As System.Windows.Forms.DataGridView
+    Friend WithEvents DataTable1BindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents DataTable1TableAdapter As PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter
+    Friend WithEvents DataTable1BindingSource2 As System.Windows.Forms.BindingSource
 End Class
