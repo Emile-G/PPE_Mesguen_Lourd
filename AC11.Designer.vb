@@ -91,7 +91,7 @@ Partial Class AC11
         Me.ListeTournees.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.ListeTournees.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.ListeTournees.Size = New System.Drawing.Size(1007, 410)
+        Me.ListeTournees.Size = New System.Drawing.Size(1007, 334)
         Me.ListeTournees.TabIndex = 0
         '
         'NTourneeDataGridViewTextBoxColumn
@@ -159,7 +159,7 @@ Partial Class AC11
         Me.LabelTournee.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelTournee.Location = New System.Drawing.Point(0, 0)
         Me.LabelTournee.Name = "LabelTournee"
-        Me.LabelTournee.Size = New System.Drawing.Size(1274, 36)
+        Me.LabelTournee.Size = New System.Drawing.Size(1156, 36)
         Me.LabelTournee.TabIndex = 1
         Me.LabelTournee.Text = "Liste des Tournées"
         Me.LabelTournee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -168,7 +168,7 @@ Partial Class AC11
         '
         Me.Supprimer.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Supprimer.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Supprimer.Location = New System.Drawing.Point(1144, 125)
+        Me.Supprimer.Location = New System.Drawing.Point(1026, 64)
         Me.Supprimer.Name = "Supprimer"
         Me.Supprimer.Size = New System.Drawing.Size(118, 49)
         Me.Supprimer.TabIndex = 2
@@ -183,7 +183,7 @@ Partial Class AC11
         '
         Me.Modifier.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Modifier.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Modifier.Location = New System.Drawing.Point(1144, 198)
+        Me.Modifier.Location = New System.Drawing.Point(1026, 192)
         Me.Modifier.Name = "Modifier"
         Me.Modifier.Size = New System.Drawing.Size(118, 49)
         Me.Modifier.TabIndex = 3
@@ -194,7 +194,7 @@ Partial Class AC11
         '
         Me.Ajouter.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Ajouter.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Ajouter.Location = New System.Drawing.Point(1144, 267)
+        Me.Ajouter.Location = New System.Drawing.Point(1026, 324)
         Me.Ajouter.Name = "Ajouter"
         Me.Ajouter.Size = New System.Drawing.Size(118, 49)
         Me.Ajouter.TabIndex = 4
@@ -206,7 +206,7 @@ Partial Class AC11
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
-        Me.ClientSize = New System.Drawing.Size(1274, 614)
+        Me.ClientSize = New System.Drawing.Size(1156, 385)
         Me.Controls.Add(Me.Ajouter)
         Me.Controls.Add(Me.Modifier)
         Me.Controls.Add(Me.Supprimer)

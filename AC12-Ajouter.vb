@@ -56,7 +56,12 @@
         value = DirectCast(ListeChauffeurs.SelectedItem, KeyValuePair(Of String, String)).Value
     End Sub
 
-    Private Sub Valider_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub Retour_Click_1(sender As System.Object, e As System.EventArgs) Handles Retour.Click
+        AC11.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub Valider_Click_1(sender As System.Object, e As System.EventArgs) Handles Valider.Click
         'Insertion de la tournée
 
         Dim Veh As String = ListeVehicules.Text.ToString
@@ -74,11 +79,6 @@
         End Try
 
 
-        AC11.Show()
-        Me.Close()
-    End Sub
-
-    Private Sub Retour_Click_1(sender As System.Object, e As System.EventArgs) Handles Retour.Click
         AC11.Show()
         Me.Close()
     End Sub
