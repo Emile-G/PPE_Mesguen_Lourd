@@ -14,8 +14,6 @@
         If ans = vbYes Then
             myCommand = New Odbc.OdbcCommand("DELETE FROM ETAPE WHERE TRNNUM = " & trnnum & ";", myConnection)
             myCommand.ExecuteNonQuery()
-            myCommand = New Odbc.OdbcCommand("DELETE FROM TOURNEE WHERE TRNNUM = " & trnnum & ";", myConnection)
-            myCommand.ExecuteNonQuery()
             Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
         End If
     End Sub
@@ -25,7 +23,13 @@
         trnnum = Convert.ToString(ListeTournees.CurrentRow.Cells.Item(0).Value)
         ans = MsgBox("Voulez vous modifier la tournée N° " & trnnum & " ?", vbYesNo)
         If ans = vbYes Then
-            TestModifer.Show()
+            AC12_Modifier.Show()
         End If
+    End Sub
+
+    Private Sub Ajouter_click(sender As System.Object, e As System.EventArgs) Handles Ajouter.Click
+
+        AC12_Ajouter.Show()
+        Me.Close()
     End Sub
 End Class

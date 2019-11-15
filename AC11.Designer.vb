@@ -23,10 +23,10 @@ Partial Class AC11
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.ListeTournees = New System.Windows.Forms.DataGridView()
         Me.NTourneeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,6 +41,7 @@ Partial Class AC11
         Me.Supprimer = New System.Windows.Forms.Button()
         Me.DataTable1TableAdapter = New PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter()
         Me.Modifier = New System.Windows.Forms.Button()
+        Me.Ajouter = New System.Windows.Forms.Button()
         CType(Me.ListeTournees, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,40 +57,40 @@ Partial Class AC11
         Me.ListeTournees.AutoGenerateColumns = False
         Me.ListeTournees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ListeTournees.BackgroundColor = System.Drawing.SystemColors.ControlLight
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListeTournees.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListeTournees.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.ListeTournees.ColumnHeadersHeight = 24
         Me.ListeTournees.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NTourneeDataGridViewTextBoxColumn, Me.NomDataGridViewTextBoxColumn, Me.RemorqueDataGridViewTextBoxColumn, Me.CommentaireDataGridViewTextBoxColumn, Me.ImmatriculationVéhiculeDataGridViewTextBoxColumn, Me.DepartDataGridViewTextBoxColumn, Me.ArriverDataGridViewTextBoxColumn})
         Me.ListeTournees.DataSource = Me.DataTable1BindingSource
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.ListeTournees.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ListeTournees.DefaultCellStyle = DataGridViewCellStyle2
         Me.ListeTournees.GridColor = System.Drawing.SystemColors.Control
         Me.ListeTournees.Location = New System.Drawing.Point(12, 39)
         Me.ListeTournees.Name = "ListeTournees"
         Me.ListeTournees.ReadOnly = True
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.ListeTournees.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.ListeTournees.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.ListeTournees.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.ListeTournees.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.ListeTournees.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.ListeTournees.Size = New System.Drawing.Size(1007, 410)
         Me.ListeTournees.TabIndex = 0
         '
@@ -167,7 +168,7 @@ Partial Class AC11
         '
         Me.Supprimer.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Supprimer.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Supprimer.Location = New System.Drawing.Point(1144, 39)
+        Me.Supprimer.Location = New System.Drawing.Point(1144, 125)
         Me.Supprimer.Name = "Supprimer"
         Me.Supprimer.Size = New System.Drawing.Size(118, 49)
         Me.Supprimer.TabIndex = 2
@@ -182,12 +183,23 @@ Partial Class AC11
         '
         Me.Modifier.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Modifier.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Modifier.Location = New System.Drawing.Point(1144, 112)
+        Me.Modifier.Location = New System.Drawing.Point(1144, 198)
         Me.Modifier.Name = "Modifier"
         Me.Modifier.Size = New System.Drawing.Size(118, 49)
         Me.Modifier.TabIndex = 3
         Me.Modifier.Text = "Modifier"
         Me.Modifier.UseVisualStyleBackColor = False
+        '
+        'Ajouter
+        '
+        Me.Ajouter.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Ajouter.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Ajouter.Location = New System.Drawing.Point(1144, 267)
+        Me.Ajouter.Name = "Ajouter"
+        Me.Ajouter.Size = New System.Drawing.Size(118, 49)
+        Me.Ajouter.TabIndex = 4
+        Me.Ajouter.Text = "Ajouter"
+        Me.Ajouter.UseVisualStyleBackColor = False
         '
         'AC11
         '
@@ -195,6 +207,7 @@ Partial Class AC11
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
         Me.ClientSize = New System.Drawing.Size(1274, 614)
+        Me.Controls.Add(Me.Ajouter)
         Me.Controls.Add(Me.Modifier)
         Me.Controls.Add(Me.Supprimer)
         Me.Controls.Add(Me.LabelTournee)
@@ -222,4 +235,5 @@ Partial Class AC11
     Friend WithEvents DepartDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ArriverDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Modifier As System.Windows.Forms.Button
+    Friend WithEvents Ajouter As System.Windows.Forms.Button
 End Class
