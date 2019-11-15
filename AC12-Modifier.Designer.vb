@@ -41,16 +41,9 @@ Partial Class AC12_Modifier
         Me.Supprimer = New System.Windows.Forms.Button()
         Me.Modifier = New System.Windows.Forms.Button()
         Me.GrilleEtapes = New System.Windows.Forms.DataGridView()
-        Me.DataTable1BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet1 = New PPE_Mesguen_Lourd.DataSet1()
-        Me.DataTable1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataTable1TableAdapter = New PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter()
-        Me.DataTable1BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+       
         CType(Me.GrilleEtapes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataTable1BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+
         Me.SuspendLayout()
         '
         'LabelDate
@@ -221,30 +214,7 @@ Partial Class AC12_Modifier
         Me.GrilleEtapes.ReadOnly = True
         Me.GrilleEtapes.Size = New System.Drawing.Size(325, 150)
         Me.GrilleEtapes.TabIndex = 24
-        '
-        'DataTable1BindingSource1
-        '
-        Me.DataTable1BindingSource1.DataMember = "DataTable1"
-        Me.DataTable1BindingSource1.DataSource = Me.DataSet1
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DataTable1BindingSource
-        '
-        Me.DataTable1BindingSource.DataMember = "DataTable1"
-        Me.DataTable1BindingSource.DataSource = Me.DataSet1
-        '
-        'DataTable1TableAdapter
-        '
-        Me.DataTable1TableAdapter.ClearBeforeFill = True
-        '
-        'DataTable1BindingSource2
-        '
-        Me.DataTable1BindingSource2.DataMember = "DataTable1"
-        Me.DataTable1BindingSource2.DataSource = Me.DataSet1
+
         '
         'AC12_Modifier
         '
@@ -273,10 +243,6 @@ Partial Class AC12_Modifier
         Me.Name = "AC12_Modifier"
         Me.Text = "AC12_Modifier"
         CType(Me.GrilleEtapes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataTable1BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -296,12 +262,7 @@ Partial Class AC12_Modifier
     Friend WithEvents Retour As System.Windows.Forms.Button
     Friend WithEvents LabelEtapes As System.Windows.Forms.Label
     Friend WithEvents Ajouter As System.Windows.Forms.Button
-    Friend WithEvents DataSet1 As PPE_Mesguen_Lourd.DataSet1
-    Friend WithEvents DataTable1BindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Supprimer As System.Windows.Forms.Button
     Friend WithEvents Modifier As System.Windows.Forms.Button
     Friend WithEvents GrilleEtapes As System.Windows.Forms.DataGridView
-    Friend WithEvents DataTable1BindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents DataTable1TableAdapter As PPE_Mesguen_Lourd.DataSet1TableAdapters.DataTable1TableAdapter
-    Friend WithEvents DataTable1BindingSource2 As System.Windows.Forms.BindingSource
 End Class
