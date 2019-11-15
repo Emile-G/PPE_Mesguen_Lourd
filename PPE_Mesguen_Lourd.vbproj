@@ -86,6 +86,7 @@
     <Compile Include="DataSet1.vb">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ModuleGlobal.vb" />
     <Compile Include="Page_Connexion.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +109,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TestModifer.Designer.vb">
+      <DependentUpon>TestModifer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestModifer.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AC11.resx">
@@ -121,6 +128,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestModifer.resx">
+      <DependentUpon>TestModifer.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

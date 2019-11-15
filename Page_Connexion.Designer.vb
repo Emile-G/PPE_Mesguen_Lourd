@@ -33,7 +33,7 @@ Partial Class Page_Connexion
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(12, 11)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(33, 13)
         Me.Label1.TabIndex = 1
@@ -42,7 +42,7 @@ Partial Class Page_Connexion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 59)
+        Me.Label2.Location = New System.Drawing.Point(12, 61)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 3
@@ -50,7 +50,7 @@ Partial Class Page_Connexion
         '
         'Login
         '
-        Me.Login.Location = New System.Drawing.Point(12, 24)
+        Me.Login.Location = New System.Drawing.Point(12, 26)
         Me.Login.Name = "Login"
         Me.Login.Size = New System.Drawing.Size(317, 20)
         Me.Login.TabIndex = 4
@@ -58,7 +58,7 @@ Partial Class Page_Connexion
         '
         'Password
         '
-        Me.Password.Location = New System.Drawing.Point(12, 75)
+        Me.Password.Location = New System.Drawing.Point(12, 77)
         Me.Password.Name = "Password"
         Me.Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.Password.Size = New System.Drawing.Size(317, 20)
@@ -68,7 +68,7 @@ Partial Class Page_Connexion
         'Connexion
         '
         Me.Connexion.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Connexion.Location = New System.Drawing.Point(100, 114)
+        Me.Connexion.Location = New System.Drawing.Point(100, 116)
         Me.Connexion.Name = "Connexion"
         Me.Connexion.Size = New System.Drawing.Size(132, 29)
         Me.Connexion.TabIndex = 6
@@ -89,7 +89,7 @@ Partial Class Page_Connexion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
-        Me.ClientSize = New System.Drawing.Size(343, 150)
+        Me.ClientSize = New System.Drawing.Size(344, 152)
         Me.Controls.Add(Me.ErreurCo)
         Me.Controls.Add(Me.Connexion)
         Me.Controls.Add(Me.Password)

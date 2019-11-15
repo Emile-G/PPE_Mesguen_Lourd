@@ -1,14 +1,4 @@
 ﻿Public Class Page_Connexion
-    Dim myConnection As New Odbc.OdbcConnection
-    Dim myCommand As New Odbc.OdbcCommand
-    Dim myCommand2 As New Odbc.OdbcCommand
-    Dim myReader As Odbc.OdbcDataReader
-    Dim myReader2 As Odbc.OdbcDataReader
-    Dim myAdapter As Odbc.OdbcDataAdapter
-    Dim myAdapter2 As Odbc.OdbcDataAdapter
-    Dim myBuilder As Odbc.OdbcCommandBuilder
-    Dim myBuilder2 As Odbc.OdbcCommandBuilder
-    Dim connString As String
     Dim AC11 As New AC11()
 
     Public Sub New()
@@ -32,5 +22,9 @@
             ErreurCo.Text = ("Login ou mot de passe incorrecte" + ex.Message)
             'MessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Private Sub Page_Connexion_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
