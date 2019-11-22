@@ -54,8 +54,7 @@
     End Sub
 
     Private Sub Retour_Click(sender As System.Object, e As System.EventArgs) Handles Retour.Click
-        Me.Hide()
-        AC12_Modifier.Show()
+        'AC12_Modifier.Show()
         Me.Close()
     End Sub
 
@@ -79,8 +78,8 @@
         myCommand = New Odbc.OdbcCommand(InsertETP, myConnection)
         myCommand.ExecuteNonQuery()
 
-        AC12_Modifier.Show()
-        Me.Close()
+        'AC12_Modifier.Show()
+        'Me.Close()
     End Sub
 
     

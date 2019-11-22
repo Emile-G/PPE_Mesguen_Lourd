@@ -8,7 +8,7 @@
     Private Sub Ajouter_Click(sender As System.Object, e As System.EventArgs) Handles Ajouter.Click
         Try
             Me.Hide()
-            AC12_Ajouter.Show()
+            'AC12_Ajouter.Show()
         Catch ex As Odbc.OdbcException
             MessageBox.Show(ex.Message)
         End Try

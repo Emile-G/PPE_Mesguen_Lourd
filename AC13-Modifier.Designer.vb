@@ -91,6 +91,8 @@ Partial Class AC13_Modifier
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm"
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker1.Location = New System.Drawing.Point(250, 94)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
@@ -98,6 +100,8 @@ Partial Class AC13_Modifier
         '
         'DateTimePicker2
         '
+        Me.DateTimePicker2.CustomFormat = "dd/MM/yyyy HH:mm"
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePicker2.Location = New System.Drawing.Point(250, 170)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
