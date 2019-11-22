@@ -53,8 +53,8 @@
 
     'REDIRECTION VERS AJOUT D'ETAPE
     Private Sub Ajouter_Click(sender As System.Object, e As System.EventArgs) Handles Ajouter.Click
-        'AC13-Ajouter.Show()
-        Me.Hide()
+        AC13_Ajouter.Show()
+        Me.Close()
     End Sub
 
     'REDIRECTION VERS MODIFICATION D'ETAPE
