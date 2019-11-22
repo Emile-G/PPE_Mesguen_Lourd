@@ -3499,8 +3499,6 @@ Partial Public Class DataSet1
         
         Private columnNom As Global.System.Data.DataColumn
         
-        Private columnREMORQUE As Global.System.Data.DataColumn
-        
         Private columnCOMMENTAIRE As Global.System.Data.DataColumn
         
         Private columnImmatriculation_véhicule As Global.System.Data.DataColumn
@@ -3557,14 +3555,6 @@ Partial Public Class DataSet1
         Public ReadOnly Property NomColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnNom
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property REMORQUEColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnREMORQUE
             End Get
         End Property
         
@@ -3637,9 +3627,9 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDataTable1Row(ByVal _N__Tournee As Decimal, ByVal Nom As String, ByVal REMORQUE As Decimal, ByVal COMMENTAIRE As String, ByVal Immatriculation_véhicule As String, ByVal DEPART As String, ByVal ARRIVER As String) As DataTable1Row
+        Public Overloads Function AddDataTable1Row(ByVal _N__Tournee As Decimal, ByVal Nom As String, ByVal COMMENTAIRE As String, ByVal Immatriculation_véhicule As String, ByVal DEPART As String, ByVal ARRIVER As String) As DataTable1Row
             Dim rowDataTable1Row As DataTable1Row = CType(Me.NewRow,DataTable1Row)
-            Dim columnValuesArray() As Object = New Object() {_N__Tournee, Nom, REMORQUE, COMMENTAIRE, Immatriculation_véhicule, DEPART, ARRIVER}
+            Dim columnValuesArray() As Object = New Object() {_N__Tournee, Nom, COMMENTAIRE, Immatriculation_véhicule, DEPART, ARRIVER}
             rowDataTable1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataTable1Row)
             Return rowDataTable1Row
@@ -3664,7 +3654,6 @@ Partial Public Class DataSet1
         Friend Sub InitVars()
             Me._columnN__Tournee = MyBase.Columns("N° Tournee")
             Me.columnNom = MyBase.Columns("Nom")
-            Me.columnREMORQUE = MyBase.Columns("Remorque")
             Me.columnCOMMENTAIRE = MyBase.Columns("Commentaire")
             Me.columnImmatriculation_véhicule = MyBase.Columns("Immatriculation véhicule")
             Me.columnDEPART = MyBase.Columns("Depart")
@@ -3680,12 +3669,6 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me._columnN__Tournee)
             Me.columnNom = New Global.System.Data.DataColumn("Nom", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNom)
-            Me.columnREMORQUE = New Global.System.Data.DataColumn("Remorque", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            Me.columnREMORQUE.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "REMORQUE")
-            Me.columnREMORQUE.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "REMORQUEColumn")
-            Me.columnREMORQUE.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnREMORQUE")
-            Me.columnREMORQUE.ExtendedProperties.Add("Generator_UserColumnName", "Remorque")
-            MyBase.Columns.Add(Me.columnREMORQUE)
             Me.columnCOMMENTAIRE = New Global.System.Data.DataColumn("Commentaire", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             Me.columnCOMMENTAIRE.ExtendedProperties.Add("Generator_ColumnPropNameInRow", "COMMENTAIRE")
             Me.columnCOMMENTAIRE.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "COMMENTAIREColumn")
@@ -3709,7 +3692,6 @@ Partial Public Class DataSet1
             Me._columnN__Tournee.AllowDBNull = false
             Me.columnNom.Caption = "NOM"
             Me.columnNom.MaxLength = 32
-            Me.columnREMORQUE.Caption = "REMORQUE"
             Me.columnCOMMENTAIRE.Caption = "COMMENTAIRE"
             Me.columnCOMMENTAIRE.MaxLength = 32
             Me.columnImmatriculation_véhicule.AllowDBNull = false
@@ -4967,21 +4949,6 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property REMORQUE() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tableDataTable1.REMORQUEColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("La valeur pour la colonne 'Remorque' dans la table 'DataTable1' est DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDataTable1.REMORQUEColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property COMMENTAIRE() As String
             Get
                 Try 
@@ -5046,18 +5013,6 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetNomNull()
             Me(Me.tableDataTable1.NomColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsREMORQUENull() As Boolean
-            Return Me.IsNull(Me.tableDataTable1.REMORQUEColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetREMORQUENull()
-            Me(Me.tableDataTable1.REMORQUEColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7884,7 +7839,6 @@ Namespace DataSet1TableAdapters
             tableMapping.DataSetTable = "DataTable1"
             tableMapping.ColumnMappings.Add("N° Tournee", "N° Tournee")
             tableMapping.ColumnMappings.Add("NOM", "Nom")
-            tableMapping.ColumnMappings.Add("REMORQUE", "Remorque")
             tableMapping.ColumnMappings.Add("COMMENTAIRE", "Commentaire")
             tableMapping.ColumnMappings.Add("Immatriculation véhicule", "Immatriculation véhicule")
             tableMapping.ColumnMappings.Add("DEPART", "Depart")
@@ -7905,9 +7859,9 @@ Namespace DataSet1TableAdapters
             Me._commandCollection = New Global.System.Data.Odbc.OdbcCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.Odbc.OdbcCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        TRNNUM AS ""N° Tournee"", CHFNOM AS Nom, REMORQUE AS Remorque, TRNCOM"& _ 
-                "MENTAIRE AS Commentaire, VEHIMMAT AS ""Immatriculation véhicule"", ETAPE_DEPART AS"& _ 
-                " Depart, ETAPE_ARRIVER AS Arriver"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            U_MESGUEN.V_TOURNEE"
+            Me._commandCollection(0).CommandText = "SELECT        TRNNUM AS ""N° Tournee"", CHFNOM AS Nom, TRNCOMMENTAIRE AS Commentair"& _ 
+                "e, VEHIMMAT AS ""Immatriculation véhicule"", ETAPE_DEPART AS Depart, ETAPE_ARRIVER"& _ 
+                " AS Arriver"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            U_MESGUEN.V_TOURNEE"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

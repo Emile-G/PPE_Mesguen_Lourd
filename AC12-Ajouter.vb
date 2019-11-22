@@ -34,8 +34,6 @@
             Dim InsertTournee As String = "INSERT INTO TOURNEE(VEHIMMAT,CHFID,TRNCOMMENTAIRE,TRNDTE) VALUES('" & Veh & "','" & key & "','" & Comm & "',TO_DATE('" & TRNDTE.Text & "', 'dd/MM/yy'));"
             myCommande = New Odbc.OdbcCommand(InsertTournee, myConnection)
             myCommande.ExecuteNonQuery()
-
-            MessageBox.Show("Insertion réussie")
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try

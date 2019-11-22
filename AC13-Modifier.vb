@@ -25,9 +25,9 @@
         Me.Close()
     End Sub
 
-    Private Sub Valider_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub Valider_Click(sender As System.Object, e As System.EventArgs) Handles Valider.Click
 
-        Dim UpdateETP As String = "UPDATE etape SET LIEUID = '" & key & "', ETPHREMIN = TO_DATE('" & DateTimePicker1.Text.ToString & "','dd/MM/yy HH24:MI') , ETPHREMAX = TO_DATE('" & DateTimePicker2.Text.ToString & "','dd/MM/yy HH24:MI'), ETPHREDEBUT = NULL, ETPCOMMENTAIRE = '" & TextBox2.Text.ToString & "' WHERE TRNNUM =" & TRNNUM & " AND ETPID = '" & ETPID.ToString & "';"
+        Dim UpdateETP As String = "UPDATE etape SET LIEUID = '" & key & "', ETPHREMIN = TO_DATE('" & DateTimePicker1.Text.ToString & "','dd/MM/yy HH24:MI') , ETPHREMAX = TO_DATE('" & DateTimePicker2.Text.ToString & "','dd/MM/yy HH24:MI'), ETPHREDEBUT = NULL, ETPCOMMENTAIRE = '" & TextBox2.Text.ToString & "' WHERE TRNNUM =" & trnnum & " AND ETPID = '" & etpid.ToString & "';"
         myCommande = New Odbc.OdbcCommand(UpdateETP, myConnection)
         myCommande.ExecuteNonQuery()
         AC12_Modifier.Show()
