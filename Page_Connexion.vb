@@ -14,13 +14,11 @@
         Try
             myConnection.Open()
             'MessageBox.Show("Connexion Oracle Réussie")
-            Me.Hide()
-            AC11.ShowDialog()
+            AC11.Show()
             Me.Close()
         Catch ex As Odbc.OdbcException
             ErreurCo.Text = ("Login ou mot de passe incorrecte" + ex.Message)
             MessageBox.Show(ex.Message)
         End Try
     End Sub
-
 End Class

@@ -7,7 +7,7 @@
 
     Dim MAXETPID As String
 
-    
+
     Private Sub AC13_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         myCommande.Connection = myConnection
         InitLieux()

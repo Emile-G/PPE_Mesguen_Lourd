@@ -161,7 +161,7 @@ Partial Class AC11
         Me.LabelTournee.Name = "LabelTournee"
         Me.LabelTournee.Size = New System.Drawing.Size(1156, 36)
         Me.LabelTournee.TabIndex = 1
-        Me.LabelTournee.Text = "Liste des Tournées"
+        Me.LabelTournee.Text = "AC11 - Liste des Tournées"
         Me.LabelTournee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Supprimer

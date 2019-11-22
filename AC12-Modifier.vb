@@ -59,8 +59,13 @@
 
     'REDIRECTION VERS MODIFICATION D'ETAPE
     Private Sub Modifier_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modifier.Click
-        'AC13-Modifier.Show()
-        Me.Hide()
+        Dim ans As String
+        etpid = Convert.ToString(GrilleEtapes.CurrentRow.Cells.Item(0).Value)
+        ans = MsgBox("Voulez vous modifier l'étape N° " & etpid & " ?", vbYesNo)
+        If ans = vbYes Then
+            AC13_Modifier.Show()
+            Me.Close()
+        End If
     End Sub
 
     'SUPPRIMER UNE ETAPE

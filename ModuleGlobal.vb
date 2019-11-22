@@ -6,4 +6,5 @@
     Public myBuilder As New Odbc.OdbcCommandBuilder
     Public connString As String
     Public trnnum As Integer
+    Public etpid As Integer
 End Module

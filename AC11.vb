@@ -24,7 +24,7 @@
         ans = MsgBox("Voulez vous modifier la tournée N° " & trnnum & " ?", vbYesNo)
         If ans = vbYes Then
             AC12_Modifier.Show()
-            Me.Hide()
+            Me.Close()
         End If
     End Sub
 
