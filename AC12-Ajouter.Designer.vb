@@ -144,21 +144,25 @@ Partial Class AC12_Ajouter
         '
         'Valider
         '
-        Me.Valider.Location = New System.Drawing.Point(25, 450)
+        Me.Valider.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Valider.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Valider.Location = New System.Drawing.Point(25, 437)
         Me.Valider.Name = "Valider"
-        Me.Valider.Size = New System.Drawing.Size(75, 23)
-        Me.Valider.TabIndex = 16
+        Me.Valider.Size = New System.Drawing.Size(118, 49)
+        Me.Valider.TabIndex = 18
         Me.Valider.Text = "Valider"
-        Me.Valider.UseVisualStyleBackColor = True
+        Me.Valider.UseVisualStyleBackColor = False
         '
         'Retour
         '
-        Me.Retour.Location = New System.Drawing.Point(418, 450)
+        Me.Retour.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Retour.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Retour.Location = New System.Drawing.Point(375, 437)
         Me.Retour.Name = "Retour"
-        Me.Retour.Size = New System.Drawing.Size(75, 23)
-        Me.Retour.TabIndex = 17
+        Me.Retour.Size = New System.Drawing.Size(118, 49)
+        Me.Retour.TabIndex = 19
         Me.Retour.Text = "Retour"
-        Me.Retour.UseVisualStyleBackColor = True
+        Me.Retour.UseVisualStyleBackColor = False
         '
         'AC12_Ajouter
         '

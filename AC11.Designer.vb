@@ -168,7 +168,7 @@ Partial Class AC11
         '
         Me.Supprimer.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Supprimer.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Supprimer.Location = New System.Drawing.Point(1026, 64)
+        Me.Supprimer.Location = New System.Drawing.Point(1025, 324)
         Me.Supprimer.Name = "Supprimer"
         Me.Supprimer.Size = New System.Drawing.Size(118, 49)
         Me.Supprimer.TabIndex = 2
@@ -194,7 +194,7 @@ Partial Class AC11
         '
         Me.Ajouter.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Ajouter.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Ajouter.Location = New System.Drawing.Point(1026, 324)
+        Me.Ajouter.Location = New System.Drawing.Point(1026, 65)
         Me.Ajouter.Name = "Ajouter"
         Me.Ajouter.Size = New System.Drawing.Size(118, 49)
         Me.Ajouter.TabIndex = 4

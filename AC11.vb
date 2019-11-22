@@ -1,10 +1,8 @@
 ﻿Public Class AC11
-    Dim myCommand As New Odbc.OdbcCommand
-
     Private Sub AC11_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         'TODO: cette ligne de code charge les données dans la table 'DataSet1.DataTable1'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
         Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
-        
+
     End Sub
 
     Private Sub Supprimer_Click(sender As System.Object, e As System.EventArgs) Handles Supprimer.Click
@@ -12,8 +10,10 @@
         trnnum = Convert.ToString(ListeTournees.CurrentRow.Cells.Item(0).Value)
         ans = MsgBox("Vous les vous confirmer la suppression de la tournée N° " & trnnum & " ?", vbYesNo)
         If ans = vbYes Then
-            myCommand = New Odbc.OdbcCommand("DELETE FROM ETAPE WHERE TRNNUM = " & trnnum & ";", myConnection)
-            myCommand.ExecuteNonQuery()
+            myCommande = New Odbc.OdbcCommand("DELETE FROM ETAPE WHERE TRNNUM = " & trnnum & ";", myConnection)
+            myCommande.ExecuteNonQuery()
+            myCommande = New Odbc.OdbcCommand("DELETE FROM TOURNEE WHERE TRNNUM = " & trnnum & ";", myConnection)
+            myCommande.ExecuteNonQuery()
             Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
         End If
     End Sub
@@ -24,6 +24,7 @@
         ans = MsgBox("Voulez vous modifier la tournée N° " & trnnum & " ?", vbYesNo)
         If ans = vbYes Then
             AC12_Modifier.Show()
+            Me.Hide()
         End If
     End Sub
 

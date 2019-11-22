@@ -1,52 +1,16 @@
 ﻿Public Class AC12_Ajouter
-    Dim myCommande As New Odbc.OdbcCommand
-    Dim myReader As Odbc.OdbcDataReader
-    Dim myAdapter As Odbc.OdbcDataAdapter
-    Dim myBuilder As Odbc.OdbcCommandBuilder
-
+    'Dictionnaire de données liant les noms des chauffeurs à leur CHFID
     Dim comboSource As New Dictionary(Of String, String)()
-
     Dim key As String
     Dim value As String
 
-    Private Sub AC12_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
-        connString = "DSN=CNXORA_Mesguen;Uid=u_mesguen;Pwd=estran;"
+    Private Sub AC12_Modifier_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
-        If myConnection.State = ConnectionState.Closed Then
-            myConnection.ConnectionString = connString
-            Try
-                myConnection.Open()
-            Catch ex As Odbc.OdbcException
-                MessageBox.Show(ex.Message)
-            End Try
-        End If
         myCommande.Connection = myConnection
+        InitChauff()
+        InitVehicule()
 
-        'Recupération des noms des chauffeurs
-        Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR ORDER BY CHFID ASC;"
-        myCommande.CommandText = queryCHF
-        myReader = myCommande.ExecuteReader
-
-        While myReader.Read
-            comboSource.Add(myReader.GetString(0).Trim.ToString, myReader.GetString(1).Trim.ToString)
-        End While
-        myReader.Close()
-
-        ListeChauffeurs.DataSource = New BindingSource(comboSource, Nothing)
-        ListeChauffeurs.DisplayMember = "Value"
-
-        'Recupération des immatriculations des vehicules
-        Dim queryVEH As String = "SELECT VEHIMMAT FROM VEHICULE"
-        myCommande.CommandText = queryVEH
-        myReader = myCommande.ExecuteReader
-
-        While myReader.Read
-            ListeVehicules.Items.Add(myReader.GetString(0).Trim)
-        End While
-        myReader.Close()
-
-        ListeVehicules.SelectedIndex = 0
     End Sub
 
     Private Sub ListeChauffeurs_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListeChauffeurs.SelectedIndexChanged
@@ -54,14 +18,14 @@
         value = DirectCast(ListeChauffeurs.SelectedItem, KeyValuePair(Of String, String)).Value
     End Sub
 
+    'RETOUR A LA LISTE DES TOURNEES
     Private Sub Retour_Click(sender As System.Object, e As System.EventArgs) Handles Retour.Click
         AC11.Show()
         Me.Close()
     End Sub
 
+    'INSERTION DE LA TOURNEE
     Private Sub Valider_Click(sender As System.Object, e As System.EventArgs) Handles Valider.Click
-        'Insertion de la tournée
-
         Dim Veh As String = ListeVehicules.Text.ToString
         Dim Comm As String = TextBox1.Text.ToString
         Dim PEC As String = "NULL"
@@ -79,4 +43,37 @@
         AC11.Show()
         Me.Close()
     End Sub
+
+
+    'FONCTIONS
+
+    'REMPLIT LA LISTE DES CHAUFFEURS GRACE AU DICTIONNAIRE DE DONNEES
+    Public Sub InitChauff()
+        Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR ORDER BY CHFID ASC;"
+        myCommande.CommandText = queryCHF
+        myReader = myCommande.ExecuteReader
+
+        While myReader.Read
+            comboSource.Add(myReader.GetString(0).Trim.ToString, myReader.GetString(1).Trim.ToString)
+        End While
+        myReader.Close()
+
+        ListeChauffeurs.DataSource = New BindingSource(comboSource, Nothing)
+        ListeChauffeurs.DisplayMember = "Value"
+    End Sub
+
+    'REMPLIT LA LISTE DES VEHICULES
+    Public Sub InitVehicule()
+        Dim queryVEH As String = "SELECT VEHIMMAT FROM VEHICULE"
+        myCommande.CommandText = queryVEH
+        myReader = myCommande.ExecuteReader
+
+        While myReader.Read
+            ListeVehicules.Items.Add(myReader.GetString(0).Trim)
+        End While
+        myReader.Close()
+
+        ListeVehicules.SelectedIndex = 0
+    End Sub
+    
 End Class
