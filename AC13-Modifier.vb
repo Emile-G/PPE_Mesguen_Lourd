@@ -151,6 +151,4 @@
 
         TextBox2.Text = CommEtape
     End Sub
-
-
 End Class
