@@ -6,12 +6,16 @@
 
     Dim CommEtape As String
 
+    'Table de données contenant les ETPID et les LIEUNOM associées à la tournée
+    Dim donnee As DataTable
+
     Private Sub AC13_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
         myCommande.Connection = myConnection
         InitLieux()
         InitDate()
         InitComm()
+        AfficherPhotos()
 
     End Sub
 
@@ -26,15 +30,58 @@
     End Sub
 
     Private Sub Valider_Click(sender As System.Object, e As System.EventArgs) Handles Valider.Click
-
         Dim UpdateETP As String = "UPDATE etape SET LIEUID = '" & key & "', ETPHREMIN = TO_DATE('" & DateTimePicker1.Text.ToString & "','dd/MM/yy HH24:MI') , ETPHREMAX = TO_DATE('" & DateTimePicker2.Text.ToString & "','dd/MM/yy HH24:MI'), ETPHREDEBUT = NULL, ETPCOMMENTAIRE = '" & TextBox2.Text.ToString & "' WHERE TRNNUM =" & trnnum & " AND ETPID = '" & etpid.ToString & "';"
         myCommande = New Odbc.OdbcCommand(UpdateETP, myConnection)
         myCommande.ExecuteNonQuery()
         AC12_Modifier.Show()
         Me.Close()
-
     End Sub
 
+    Private Sub Afficher_Click(sender As System.Object, e As System.EventArgs) Handles Afficher.Click
+
+        Dim idfichier As String
+        idfichier = Convert.ToString(GrillesPhotos.CurrentRow.Cells.Item(0).Value)
+
+        Dim queryFichier As String = "SELECT CONCAT(cheminfichier,nomfichier) FROM PHOTOS WHERE IDFichier = " & idfichier & ";"
+        myCommande.CommandText = queryFichier
+        myReader = myCommande.ExecuteReader
+        While myReader.Read
+            PhotoPB.Image = Image.FromFile(myReader.GetString(0).Trim.ToString)
+        End While
+        myReader.Close()
+    End Sub
+
+    Private Sub Supprimer_Click(sender As System.Object, e As System.EventArgs) Handles Supprimer.Click
+        Dim ans As String
+        Dim idfichier As String
+        idfichier = Convert.ToString(GrillesPhotos.CurrentRow.Cells.Item(0).Value)
+        ans = MsgBox("Vous les vous confirmer la suppression de l'image N° " & idfichier & " ?", vbYesNo)
+        If ans = vbYes Then
+            Dim queryFichier As String = "SELECT CONCAT(cheminfichier,nomfichier) FROM PHOTOS WHERE IDFichier = " & idfichier & ";"
+            myCommande.CommandText = queryFichier
+            myReader = myCommande.ExecuteReader
+            While myReader.Read
+                My.Computer.FileSystem.DeleteFile(myReader.GetString(0).Trim.ToString)
+            End While
+            myCommande = New Odbc.OdbcCommand("DELETE FROM PHOTOS WHERE IDFichier = " & idfichier & ";", myConnection)
+            myCommande.ExecuteNonQuery()
+            AfficherPhotos()
+        End If
+    End Sub
+
+    'REMPLIT LA GRILLE ETAPES AVEC LES ETPID ET LES LIEUNOM ASSOCIES A LA TOURNEE
+    Public Sub AfficherPhotos()
+
+        Dim Photos = "SELECT IDFICHIER ,NOMFICHIER ,DATEPHOTOS FROM PHOTOS WHERE PHOTOS.TRNNUM =" & trnnum & " AND PHOTOS.ETPID =" & etpid & ";"
+
+        donnee = New DataTable
+        myAdapter = New Odbc.OdbcDataAdapter(Photos, myConnection)
+        myBuilder = New Odbc.OdbcCommandBuilder(myAdapter)
+
+        myAdapter.Fill(donnee)
+        GrillesPhotos.DataSource = donnee
+
+    End Sub
 
     'Recupération de la liste Lieu
     Public Sub InitLieux()
@@ -104,4 +151,6 @@
 
         TextBox2.Text = CommEtape
     End Sub
+
+
 End Class

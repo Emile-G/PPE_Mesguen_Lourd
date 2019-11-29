@@ -85,7 +85,7 @@
 
     'FONCTIONS
 
-    'REMPLIT LA GRILLEETAPES AVEC LES ETPID ET LES LIEUNOM ASSOCIES A LA TOURNEE
+    'REMPLIT LA GRILLE ETAPES AVEC LES ETPID ET LES LIEUNOM ASSOCIES A LA TOURNEE
     Public Sub AfficherEtapes()
 
         Dim Etapes = "SELECT ETPID, LIEUNOM  FROM ETAPE, LIEU WHERE ETAPE.LIEUID = LIEU.LIEUID AND ETAPE.TRNNUM = " & trnnum & ";"
@@ -130,7 +130,7 @@
         myCommande = New Odbc.OdbcCommand(queryIndexCHF, myConnection)
         Dim IndexCHF As Integer = myCommande.ExecuteScalar()
 
-        ListeChauffeurs.SelectedIndex = IndexCHF - 1
+        'ListeChauffeurs.SelectedIndex = IndexCHF - 1
     End Sub
 
     'REMPLIT LA LISTE VEHICULES ET SELECTIONNE LE VEHICULE ASSOCIE A LA TOURNEE PAR DEFAUT
@@ -173,5 +173,4 @@
 
         TextBox1.Text = CommTournee
     End Sub
-
 End Class

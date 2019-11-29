@@ -5,11 +5,11 @@
 
         ' Cet appel est requis par le concepteur.
         InitializeComponent()
-        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent(). _Mesguen
     End Sub
 
     Private Sub Connexion_Click(sender As System.Object, e As System.EventArgs) Handles Connexion.Click
-        connString = "DSN=CNXORA_Mesguen;Uid=" & Login.Text & ";Pwd=" & Password.Text & ";"
+        connString = "DSN=CNXORA14;Uid=" & Login.Text & ";Pwd=" & Password.Text & ";"
         myConnection.ConnectionString = connString
         Try
             myConnection.Open()

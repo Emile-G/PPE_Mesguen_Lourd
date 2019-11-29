@@ -22,7 +22,6 @@ Partial Class AC13_Modifier
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -33,10 +32,16 @@ Partial Class AC13_Modifier
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Valider = New System.Windows.Forms.Button()
         Me.Retour = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Afficher = New System.Windows.Forms.Button()
+        Me.Supprimer = New System.Windows.Forms.Button()
+        Me.GrillesPhotos = New System.Windows.Forms.DataGridView()
+        Me.PhotoPB = New System.Windows.Forms.PictureBox()
+        CType(Me.GrillesPhotos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PhotoPB, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -164,17 +169,77 @@ Partial Class AC13_Modifier
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(0, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(461, 32)
+        Me.Label6.Size = New System.Drawing.Size(936, 32)
         Me.Label6.TabIndex = 31
         Me.Label6.Text = "AC13 - Modifier une étape"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label7.Location = New System.Drawing.Point(451, 56)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(142, 20)
+        Me.Label7.TabIndex = 32
+        Me.Label7.Text = "Liste des photos"
+        '
+        'Afficher
+        '
+        Me.Afficher.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Afficher.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Afficher.Location = New System.Drawing.Point(455, 102)
+        Me.Afficher.Name = "Afficher"
+        Me.Afficher.Size = New System.Drawing.Size(118, 49)
+        Me.Afficher.TabIndex = 33
+        Me.Afficher.Text = "Afficher"
+        Me.Afficher.UseVisualStyleBackColor = False
+        '
+        'Supprimer
+        '
+        Me.Supprimer.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Supprimer.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Supprimer.Location = New System.Drawing.Point(455, 239)
+        Me.Supprimer.Name = "Supprimer"
+        Me.Supprimer.Size = New System.Drawing.Size(118, 49)
+        Me.Supprimer.TabIndex = 34
+        Me.Supprimer.Text = "Supprimer"
+        Me.Supprimer.UseVisualStyleBackColor = False
+        '
+        'GrillesPhotos
+        '
+        Me.GrillesPhotos.AllowUserToAddRows = False
+        Me.GrillesPhotos.AllowUserToDeleteRows = False
+        Me.GrillesPhotos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.GrillesPhotos.BackgroundColor = System.Drawing.SystemColors.ControlLight
+        Me.GrillesPhotos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GrillesPhotos.GridColor = System.Drawing.SystemColors.Control
+        Me.GrillesPhotos.Location = New System.Drawing.Point(579, 102)
+        Me.GrillesPhotos.Name = "GrillesPhotos"
+        Me.GrillesPhotos.ReadOnly = True
+        Me.GrillesPhotos.Size = New System.Drawing.Size(345, 186)
+        Me.GrillesPhotos.TabIndex = 36
+        '
+        'PhotoPB
+        '
+        Me.PhotoPB.Location = New System.Drawing.Point(579, 294)
+        Me.PhotoPB.Name = "PhotoPB"
+        Me.PhotoPB.Size = New System.Drawing.Size(252, 151)
+        Me.PhotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PhotoPB.TabIndex = 37
+        Me.PhotoPB.TabStop = False
         '
         'AC13_Modifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
-        Me.ClientSize = New System.Drawing.Size(461, 513)
+        Me.ClientSize = New System.Drawing.Size(936, 513)
+        Me.Controls.Add(Me.PhotoPB)
+        Me.Controls.Add(Me.GrillesPhotos)
+        Me.Controls.Add(Me.Supprimer)
+        Me.Controls.Add(Me.Afficher)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Retour)
         Me.Controls.Add(Me.Valider)
@@ -190,6 +255,8 @@ Partial Class AC13_Modifier
         Me.Controls.Add(Me.Label1)
         Me.Name = "AC13_Modifier"
         Me.Text = "AC13-Ajouter"
+        CType(Me.GrillesPhotos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PhotoPB, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,8 +271,12 @@ Partial Class AC13_Modifier
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Valider As System.Windows.Forms.Button
     Friend WithEvents Retour As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Afficher As System.Windows.Forms.Button
+    Friend WithEvents Supprimer As System.Windows.Forms.Button
+    Friend WithEvents GrillesPhotos As System.Windows.Forms.DataGridView
+    Friend WithEvents PhotoPB As System.Windows.Forms.PictureBox
 End Class
