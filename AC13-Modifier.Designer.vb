@@ -42,6 +42,7 @@ Partial Class AC13_Modifier
         Me.Photos = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ListePhotos = New System.Windows.Forms.ComboBox()
+        Me.PasdePhotos = New System.Windows.Forms.Label()
         CType(Me.Photo1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Photos.SuspendLayout()
         Me.SuspendLayout()
@@ -179,7 +180,7 @@ Partial Class AC13_Modifier
         'Photo1
         '
         Me.Photo1.ImageLocation = ""
-        Me.Photo1.Location = New System.Drawing.Point(45, 56)
+        Me.Photo1.Location = New System.Drawing.Point(32, 56)
         Me.Photo1.Name = "Photo1"
         Me.Photo1.Size = New System.Drawing.Size(334, 256)
         Me.Photo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -190,7 +191,7 @@ Partial Class AC13_Modifier
         '
         Me.LabelHeurePhoto.AutoSize = True
         Me.LabelHeurePhoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelHeurePhoto.Location = New System.Drawing.Point(126, 327)
+        Me.LabelHeurePhoto.Location = New System.Drawing.Point(126, 315)
         Me.LabelHeurePhoto.Name = "LabelHeurePhoto"
         Me.LabelHeurePhoto.Size = New System.Drawing.Size(149, 20)
         Me.LabelHeurePhoto.TabIndex = 33
@@ -202,9 +203,9 @@ Partial Class AC13_Modifier
         Me.Photos.Controls.Add(Me.ListePhotos)
         Me.Photos.Controls.Add(Me.LabelHeurePhoto)
         Me.Photos.Controls.Add(Me.Photo1)
-        Me.Photos.Location = New System.Drawing.Point(540, 53)
+        Me.Photos.Location = New System.Drawing.Point(535, 94)
         Me.Photos.Name = "Photos"
-        Me.Photos.Size = New System.Drawing.Size(402, 367)
+        Me.Photos.Size = New System.Drawing.Size(402, 346)
         Me.Photos.TabIndex = 34
         Me.Photos.TabStop = False
         Me.Photos.Text = "Photos"
@@ -212,7 +213,7 @@ Partial Class AC13_Modifier
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 26)
+        Me.Label7.Location = New System.Drawing.Point(29, 27)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(95, 13)
         Me.Label7.TabIndex = 35
@@ -221,10 +222,21 @@ Partial Class AC13_Modifier
         'ListePhotos
         '
         Me.ListePhotos.FormattingEnabled = True
-        Me.ListePhotos.Location = New System.Drawing.Point(130, 23)
+        Me.ListePhotos.Location = New System.Drawing.Point(130, 19)
         Me.ListePhotos.Name = "ListePhotos"
         Me.ListePhotos.Size = New System.Drawing.Size(121, 21)
         Me.ListePhotos.TabIndex = 34
+        '
+        'PasdePhotos
+        '
+        Me.PasdePhotos.AutoSize = True
+        Me.PasdePhotos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasdePhotos.Location = New System.Drawing.Point(531, 61)
+        Me.PasdePhotos.Name = "PasdePhotos"
+        Me.PasdePhotos.Size = New System.Drawing.Size(373, 20)
+        Me.PasdePhotos.TabIndex = 36
+        Me.PasdePhotos.Text = "Aucune photo n'est associée à cette étape ..."
+        Me.PasdePhotos.Visible = False
         '
         'AC13_Modifier
         '
@@ -232,6 +244,7 @@ Partial Class AC13_Modifier
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
         Me.ClientSize = New System.Drawing.Size(989, 513)
+        Me.Controls.Add(Me.PasdePhotos)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Retour)
         Me.Controls.Add(Me.Valider)
@@ -274,4 +287,5 @@ Partial Class AC13_Modifier
     Friend WithEvents Photos As System.Windows.Forms.GroupBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ListePhotos As System.Windows.Forms.ComboBox
+    Friend WithEvents PasdePhotos As System.Windows.Forms.Label
 End Class

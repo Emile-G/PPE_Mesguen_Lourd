@@ -179,9 +179,13 @@
             myReader.Close()
         Else
             Photos.Visible = False
-            Me.Size = New Size(504, 552)
+            PasdePhotos.Visible = True
             myReader.Close()
         End If
+
+    End Sub
+
+    Private Sub PasdePhotos_Click(sender As System.Object, e As System.EventArgs) Handles PasdePhotos.Click
 
     End Sub
 End Class
