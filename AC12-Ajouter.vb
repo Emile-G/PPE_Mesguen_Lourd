@@ -4,8 +4,10 @@
     Dim key As String
     Dim value As String
 
-    Private Sub AC12_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
+    Private Sub AC12_Modifier_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+        myCommande.Connection = myConnection
         InitChauff()
         InitVehicule()
 
@@ -32,8 +34,6 @@
             Dim InsertTournee As String = "INSERT INTO TOURNEE(VEHIMMAT,CHFID,TRNCOMMENTAIRE,TRNDTE) VALUES('" & Veh & "','" & key & "','" & Comm & "',TO_DATE('" & TRNDTE.Text & "', 'dd/MM/yy'));"
             myCommande = New Odbc.OdbcCommand(InsertTournee, myConnection)
             myCommande.ExecuteNonQuery()
-
-            MessageBox.Show("Insertion réussie")
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -41,7 +41,6 @@
         AC11.Show()
         Me.Close()
     End Sub
-
 
 
     'FONCTIONS
@@ -74,4 +73,5 @@
 
         ListeVehicules.SelectedIndex = 0
     End Sub
+    
 End Class

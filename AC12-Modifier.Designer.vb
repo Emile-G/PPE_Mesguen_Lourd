@@ -22,7 +22,6 @@ Partial Class AC12_Modifier
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.LabelDate = New System.Windows.Forms.Label()
         Me.LabelChauffeur = New System.Windows.Forms.Label()
         Me.LabelCommentaire = New System.Windows.Forms.Label()
@@ -34,16 +33,14 @@ Partial Class AC12_Modifier
         Me.ListeVehicules = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.LabelEtapes = New System.Windows.Forms.Label()
+        Me.GrilleEtapes = New System.Windows.Forms.DataGridView()
         Me.Valider = New System.Windows.Forms.Button()
         Me.Retour = New System.Windows.Forms.Button()
-        Me.LabelEtapes = New System.Windows.Forms.Label()
         Me.Ajouter = New System.Windows.Forms.Button()
-        Me.Supprimer = New System.Windows.Forms.Button()
         Me.Modifier = New System.Windows.Forms.Button()
-        Me.GrilleEtapes = New System.Windows.Forms.DataGridView()
-       
+        Me.Supprimer = New System.Windows.Forms.Button()
         CType(Me.GrilleEtapes, System.ComponentModel.ISupportInitialize).BeginInit()
-
         Me.SuspendLayout()
         '
         'LabelDate
@@ -148,24 +145,6 @@ Partial Class AC12_Modifier
         Me.TextBox2.Size = New System.Drawing.Size(248, 26)
         Me.TextBox2.TabIndex = 15
         '
-        'Valider
-        '
-        Me.Valider.Location = New System.Drawing.Point(25, 434)
-        Me.Valider.Name = "Valider"
-        Me.Valider.Size = New System.Drawing.Size(75, 23)
-        Me.Valider.TabIndex = 16
-        Me.Valider.Text = "Valider"
-        Me.Valider.UseVisualStyleBackColor = True
-        '
-        'Retour
-        '
-        Me.Retour.Location = New System.Drawing.Point(418, 434)
-        Me.Retour.Name = "Retour"
-        Me.Retour.Size = New System.Drawing.Size(75, 23)
-        Me.Retour.TabIndex = 17
-        Me.Retour.Text = "Retour"
-        Me.Retour.UseVisualStyleBackColor = True
-        '
         'LabelEtapes
         '
         Me.LabelEtapes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -175,33 +154,6 @@ Partial Class AC12_Modifier
         Me.LabelEtapes.TabIndex = 19
         Me.LabelEtapes.Text = "Etapes"
         '
-        'Ajouter
-        '
-        Me.Ajouter.Location = New System.Drawing.Point(594, 288)
-        Me.Ajouter.Name = "Ajouter"
-        Me.Ajouter.Size = New System.Drawing.Size(75, 23)
-        Me.Ajouter.TabIndex = 20
-        Me.Ajouter.Text = "Ajouter"
-        Me.Ajouter.UseVisualStyleBackColor = True
-        '
-        'Supprimer
-        '
-        Me.Supprimer.Location = New System.Drawing.Point(844, 288)
-        Me.Supprimer.Name = "Supprimer"
-        Me.Supprimer.Size = New System.Drawing.Size(75, 23)
-        Me.Supprimer.TabIndex = 22
-        Me.Supprimer.Text = "Supprimer"
-        Me.Supprimer.UseVisualStyleBackColor = True
-        '
-        'Modifier
-        '
-        Me.Modifier.Location = New System.Drawing.Point(721, 288)
-        Me.Modifier.Name = "Modifier"
-        Me.Modifier.Size = New System.Drawing.Size(75, 23)
-        Me.Modifier.TabIndex = 23
-        Me.Modifier.Text = "Modifier"
-        Me.Modifier.UseVisualStyleBackColor = True
-        '
         'GrilleEtapes
         '
         Me.GrilleEtapes.AllowUserToAddRows = False
@@ -209,12 +161,67 @@ Partial Class AC12_Modifier
         Me.GrilleEtapes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.GrilleEtapes.BackgroundColor = System.Drawing.SystemColors.ControlLight
         Me.GrilleEtapes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.GrilleEtapes.GridColor = System.Drawing.SystemColors.Control
         Me.GrilleEtapes.Location = New System.Drawing.Point(594, 109)
         Me.GrilleEtapes.Name = "GrilleEtapes"
         Me.GrilleEtapes.ReadOnly = True
         Me.GrilleEtapes.Size = New System.Drawing.Size(325, 150)
         Me.GrilleEtapes.TabIndex = 24
-
+        '
+        'Valider
+        '
+        Me.Valider.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Valider.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Valider.Location = New System.Drawing.Point(12, 416)
+        Me.Valider.Name = "Valider"
+        Me.Valider.Size = New System.Drawing.Size(118, 49)
+        Me.Valider.TabIndex = 25
+        Me.Valider.Text = "Valider"
+        Me.Valider.UseVisualStyleBackColor = False
+        '
+        'Retour
+        '
+        Me.Retour.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Retour.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Retour.Location = New System.Drawing.Point(375, 416)
+        Me.Retour.Name = "Retour"
+        Me.Retour.Size = New System.Drawing.Size(118, 49)
+        Me.Retour.TabIndex = 26
+        Me.Retour.Text = "Retour"
+        Me.Retour.UseVisualStyleBackColor = False
+        '
+        'Ajouter
+        '
+        Me.Ajouter.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Ajouter.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Ajouter.Location = New System.Drawing.Point(594, 275)
+        Me.Ajouter.Name = "Ajouter"
+        Me.Ajouter.Size = New System.Drawing.Size(118, 49)
+        Me.Ajouter.TabIndex = 27
+        Me.Ajouter.Text = "Ajouter"
+        Me.Ajouter.UseVisualStyleBackColor = False
+        '
+        'Modifier
+        '
+        Me.Modifier.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Modifier.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Modifier.Location = New System.Drawing.Point(801, 275)
+        Me.Modifier.Name = "Modifier"
+        Me.Modifier.Size = New System.Drawing.Size(118, 49)
+        Me.Modifier.TabIndex = 28
+        Me.Modifier.Text = "Modifier"
+        Me.Modifier.UseVisualStyleBackColor = False
+        '
+        'Supprimer
+        '
+        Me.Supprimer.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Supprimer.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Supprimer.Location = New System.Drawing.Point(699, 330)
+        Me.Supprimer.Name = "Supprimer"
+        Me.Supprimer.Size = New System.Drawing.Size(118, 49)
+        Me.Supprimer.TabIndex = 29
+        Me.Supprimer.Text = "Supprimer"
+        Me.Supprimer.UseVisualStyleBackColor = False
         '
         'AC12_Modifier
         '
@@ -222,13 +229,13 @@ Partial Class AC12_Modifier
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
         Me.ClientSize = New System.Drawing.Size(931, 477)
-        Me.Controls.Add(Me.GrilleEtapes)
-        Me.Controls.Add(Me.Modifier)
         Me.Controls.Add(Me.Supprimer)
+        Me.Controls.Add(Me.Modifier)
         Me.Controls.Add(Me.Ajouter)
-        Me.Controls.Add(Me.LabelEtapes)
         Me.Controls.Add(Me.Retour)
         Me.Controls.Add(Me.Valider)
+        Me.Controls.Add(Me.GrilleEtapes)
+        Me.Controls.Add(Me.LabelEtapes)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ListeVehicules)
@@ -258,11 +265,11 @@ Partial Class AC12_Modifier
     Friend WithEvents ListeVehicules As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents LabelEtapes As System.Windows.Forms.Label
+    Friend WithEvents GrilleEtapes As System.Windows.Forms.DataGridView
     Friend WithEvents Valider As System.Windows.Forms.Button
     Friend WithEvents Retour As System.Windows.Forms.Button
-    Friend WithEvents LabelEtapes As System.Windows.Forms.Label
     Friend WithEvents Ajouter As System.Windows.Forms.Button
-    Friend WithEvents Supprimer As System.Windows.Forms.Button
     Friend WithEvents Modifier As System.Windows.Forms.Button
-    Friend WithEvents GrilleEtapes As System.Windows.Forms.DataGridView
+    Friend WithEvents Supprimer As System.Windows.Forms.Button
 End Class

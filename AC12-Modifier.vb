@@ -7,13 +7,13 @@
     'Table de données contenant les ETPID et les LIEUNOM associées à la tournée
     Dim donnee As DataTable
 
-    Private Sub AC12_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub AC12_Modifier_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        myCommande.Connection = myConnection
         InitChauffeur()
         InitVehicules()
         InitComm()
         AfficherEtapes()
-
     End Sub
 
 
@@ -22,14 +22,14 @@
         value = DirectCast(ListeChauffeurs.SelectedItem, KeyValuePair(Of String, String)).Value
     End Sub
 
-    'RETOUR VERS LISTE DES TOURNEES
-    Private Sub Retour_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Retour.Click
-        Me.Close()
+    'RETOUR VERS LISTE DES TOURNEES    
+    Private Sub Retour_Click(sender As System.Object, e As System.EventArgs) Handles Retour.Click
         AC11.Show()
+        Me.Close()
     End Sub
 
     'MISE A JOUR DE LA TOURNEE
-    Private Sub Valider_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Valider.Click
+    Private Sub Valider_Click(sender As System.Object, e As System.EventArgs) Handles Valider.Click
         'Mise à jour de la tournée
 
         Dim Veh As String = ListeVehicules.Text.ToString
@@ -52,20 +52,24 @@
     End Sub
 
     'REDIRECTION VERS AJOUT D'ETAPE
-    Private Sub Ajouter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Ajouter.Click
-        Me.Hide()
-        'AC13-Ajouter.Show()
+    Private Sub Ajouter_Click(sender As System.Object, e As System.EventArgs) Handles Ajouter.Click
+        AC13_Ajouter.Show()
+        Me.Close()
     End Sub
 
     'REDIRECTION VERS MODIFICATION D'ETAPE
     Private Sub Modifier_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modifier.Click
-        Me.Hide()
-        'AC13-Modifier.Show()
+        Dim ans As String
+        etpid = Convert.ToString(GrilleEtapes.CurrentRow.Cells.Item(0).Value)
+        ans = MsgBox("Voulez vous modifier l'étape N° " & etpid & " ?", vbYesNo)
+        If ans = vbYes Then
+            AC13_Modifier.Show()
+            Me.Close()
+        End If
     End Sub
 
     'SUPPRIMER UNE ETAPE
     Private Sub Supprimer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Supprimer.Click
-
         Dim etpid As Integer
         etpid = GrilleEtapes.CurrentRow.Cells.Item(0).Value
         Try
@@ -74,7 +78,6 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
-
         AfficherEtapes()
     End Sub
 
@@ -170,4 +173,5 @@
 
         TextBox1.Text = CommTournee
     End Sub
+
 End Class

@@ -88,7 +88,7 @@ Partial Class AC12_Ajouter
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(591, 32)
+        Me.Label1.Size = New System.Drawing.Size(513, 32)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "AC12 - Ajouter une tournée"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -144,28 +144,32 @@ Partial Class AC12_Ajouter
         '
         'Valider
         '
-        Me.Valider.Location = New System.Drawing.Point(25, 450)
+        Me.Valider.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Valider.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Valider.Location = New System.Drawing.Point(25, 437)
         Me.Valider.Name = "Valider"
-        Me.Valider.Size = New System.Drawing.Size(75, 23)
-        Me.Valider.TabIndex = 16
+        Me.Valider.Size = New System.Drawing.Size(118, 49)
+        Me.Valider.TabIndex = 18
         Me.Valider.Text = "Valider"
-        Me.Valider.UseVisualStyleBackColor = True
+        Me.Valider.UseVisualStyleBackColor = False
         '
         'Retour
         '
-        Me.Retour.Location = New System.Drawing.Point(418, 450)
+        Me.Retour.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Retour.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.Retour.Location = New System.Drawing.Point(375, 437)
         Me.Retour.Name = "Retour"
-        Me.Retour.Size = New System.Drawing.Size(75, 23)
-        Me.Retour.TabIndex = 17
+        Me.Retour.Size = New System.Drawing.Size(118, 49)
+        Me.Retour.TabIndex = 19
         Me.Retour.Text = "Retour"
-        Me.Retour.UseVisualStyleBackColor = True
+        Me.Retour.UseVisualStyleBackColor = False
         '
         'AC12_Ajouter
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
-        Me.ClientSize = New System.Drawing.Size(591, 541)
+        Me.ClientSize = New System.Drawing.Size(513, 503)
         Me.Controls.Add(Me.Retour)
         Me.Controls.Add(Me.Valider)
         Me.Controls.Add(Me.TextBox2)

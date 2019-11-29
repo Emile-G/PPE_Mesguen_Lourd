@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PPE_Mesguen_Lourd.AC12_Modifier
+            Me.MainForm = Global.PPE_Mesguen_Lourd.Page_Connexion
         End Sub
     End Class
 End Namespace
