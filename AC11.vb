@@ -1,9 +1,7 @@
 ﻿Public Class AC11
+
     Private Sub AC11_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        'TODO: cette ligne de code charge les données dans la table 'DataSet2.DataTable1'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-        Me.DataTable1TableAdapter1.Fill(Me.DataSet2.DataTable1)
-        'TODO: cette ligne de code charge les données dans la table 'DataSet1.DataTable1'. Vous pouvez la déplacer ou la supprimer selon vos besoins.
-        Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+        InitTournee()
     End Sub
 
     Private Sub Supprimer_Click(sender As System.Object, e As System.EventArgs) Handles Supprimer.Click
@@ -15,7 +13,7 @@
             myCommande.ExecuteNonQuery()
             myCommande = New Odbc.OdbcCommand("DELETE FROM TOURNEE WHERE TRNNUM = " & trnnum & ";", myConnection)
             myCommande.ExecuteNonQuery()
-            Me.DataTable1TableAdapter.Fill(Me.DataSet1.DataTable1)
+            InitTournee()
         End If
     End Sub
 
@@ -33,4 +31,16 @@
         AC12_Ajouter.Show()
         Me.Close()
     End Sub
+
+    Public Sub InitTournee()
+
+        Dim donnee As DataTable
+        Dim Tournee = "SELECT TRNNUM, CHFPRENOM , TRNCOMMENTAIRE, TRNDTE , VEHIMMAT , ETAPE_DEPART, ETAPE_ARRIVER  FROM u_mesguen.V_TOURNEE"
+        donnee = New DataTable
+        myAdapter = New Odbc.OdbcDataAdapter(Tournee, myConnection)
+        myBuilder = New Odbc.OdbcCommandBuilder(myAdapter)
+        myAdapter.Fill(donnee)
+        ListeTournees.DataSource = donnee
+    End Sub
 End Class
+
