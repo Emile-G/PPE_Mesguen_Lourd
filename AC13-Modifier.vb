@@ -5,6 +5,9 @@
     Dim Value As String
 
     Dim CommEtape As String
+    Dim PHOURL As String
+    Dim PHOTIME As Date
+
 
     Private Sub AC13_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
@@ -13,11 +16,24 @@
         InitDate()
         InitComm()
 
+        Try
+            CachePhotos()
+            InitPhotosID()
+            AffichePhoto()
+            AfficheHeurePhoto()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub ListeLieux_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListeLieux.SelectedIndexChanged
         key = DirectCast(ListeLieux.SelectedItem, KeyValuePair(Of String, String)).Key
         Value = DirectCast(ListeLieux.SelectedItem, KeyValuePair(Of String, String)).Value
+    End Sub
+
+    Private Sub ListePhotos_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListePhotos.SelectedIndexChanged
+        AffichePhoto()
+        AfficheHeurePhoto()
     End Sub
 
     Private Sub Retour_Click(sender As System.Object, e As System.EventArgs) Handles Retour.Click
@@ -35,6 +51,7 @@
 
     End Sub
 
+    'FONCTIONS
 
     'Recupération de la liste Lieu
     Public Sub InitLieux()
@@ -104,4 +121,69 @@
 
         TextBox2.Text = CommEtape
     End Sub
+
+    'Affichage Photo
+    Public Sub AffichePhoto()
+        Dim queryPhoto As String = "SELECT PHOURL FROM TSPHOTO WHERE PHOID = " & ListePhotos.SelectedItem & ";"
+        myCommande = New Odbc.OdbcCommand(queryPhoto, myConnection)
+
+        Try
+            PHOURL = myCommande.ExecuteScalar()
+        Catch ex As Exception
+            If (ex Is DBNull.Value) Then
+                PHOURL = myCommande.ExecuteNonQuery()
+            End If
+        End Try
+
+        Photo1.ImageLocation = PHOURL
+    End Sub
+
+    'Affichage de l'heure de la photo
+    Public Sub AfficheHeurePhoto()
+        Dim queryPhotoTime As String = "SELECT TO_DATE(PHOTIME, 'dd/MM/yy HH24:mi') FROM TSPHOTO WHERE PHOID = " & ListePhotos.SelectedItem & ";"
+        myCommande = New Odbc.OdbcCommand(queryPhotoTime, myConnection)
+
+        Try
+            PHOTIME = myCommande.ExecuteScalar()
+        Catch ex As Exception
+            If (ex Is DBNull.Value) Then
+                MessageBox.Show(ex.Message)
+            End If
+        End Try
+
+        LabelHeurePhoto.Text = PHOTIME.ToString.Substring(0, PHOTIME.ToString.Length - 3)
+    End Sub
+
+    'Récupérations des id des photos afin de les insérer dans la combobox
+    Public Sub InitPhotosID()
+        Dim queryPHOID As String = "SELECT PHOID FROM TSPHOTO WHERE TRNNUM = " & trnnum & " AND ETPID = '" & etpid & "';"
+        myCommande.CommandText = queryPHOID
+        myReader = myCommande.ExecuteReader
+
+        While myReader.Read
+            ListePhotos.Items.Add(myReader.GetString(0).Trim)
+        End While
+        myReader.Close()
+
+        ListePhotos.SelectedIndex = 0
+    End Sub
+
+    'Cacher le groupbox photos ou non 
+    Public Sub CachePhotos()
+        Dim CachePhotos = "SELECT PHOID FROM TSPHOTO WHERE TRNNUM = " & trnnum & " AND ETPID = '" & etpid & "';"
+        myCommande.CommandText = CachePhotos
+        myReader = myCommande.ExecuteReader
+
+        If (myReader.HasRows) Then
+            Photos.Visible = True
+            myReader.Close()
+        Else
+            Photos.Visible = False
+            PasdePhotos.Visible = True
+            myReader.Close()
+        End If
+
+    End Sub
+
 End Class
+

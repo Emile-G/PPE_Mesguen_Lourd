@@ -1,9 +1,5 @@
 ﻿Public Class AC12_Ajouter
-    'Dictionnaire de données liant les noms des chauffeurs à leur CHFID
-    Dim comboSource As New Dictionary(Of String, String)()
-    Dim key As String
-    Dim value As String
-
+    Dim donnee As DataTable
 
     Private Sub AC12_Modifier_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
@@ -14,8 +10,6 @@
     End Sub
 
     Private Sub ListeChauffeurs_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListeChauffeurs.SelectedIndexChanged
-        key = DirectCast(ListeChauffeurs.SelectedItem, KeyValuePair(Of String, String)).Key
-        value = DirectCast(ListeChauffeurs.SelectedItem, KeyValuePair(Of String, String)).Value
     End Sub
 
     'RETOUR A LA LISTE DES TOURNEES
@@ -31,7 +25,7 @@
         Dim PEC As String = "NULL"
 
         Try
-            Dim InsertTournee As String = "INSERT INTO TOURNEE(VEHIMMAT,CHFID,TRNCOMMENTAIRE,TRNDTE) VALUES('" & Veh & "','" & key & "','" & Comm & "',TO_DATE('" & TRNDTE.Text & "', 'dd/MM/yy'));"
+            Dim InsertTournee As String = "INSERT INTO TOURNEE(VEHIMMAT,CHFID,TRNCOMMENTAIRE,TRNDTE) VALUES('" & Veh & "','" & ListeChauffeurs.SelectedValue & "','" & Comm & "',TO_DATE('" & TRNDTE.Text & "', 'dd/MM/yy'));"
             myCommande = New Odbc.OdbcCommand(InsertTournee, myConnection)
             myCommande.ExecuteNonQuery()
         Catch ex As Exception
@@ -48,16 +42,13 @@
     'REMPLIT LA LISTE DES CHAUFFEURS GRACE AU DICTIONNAIRE DE DONNEES
     Public Sub InitChauff()
         Dim queryCHF As String = "SELECT CHFID, CHFNOM FROM CHAUFFEUR ORDER BY CHFID ASC;"
-        myCommande.CommandText = queryCHF
-        myReader = myCommande.ExecuteReader
+        donnee = New DataTable
+        myAdapter = New Odbc.OdbcDataAdapter(queryCHF, myConnection)
+        myAdapter.Fill(donnee)
 
-        While myReader.Read
-            comboSource.Add(myReader.GetString(0).Trim.ToString, myReader.GetString(1).Trim.ToString)
-        End While
-        myReader.Close()
-
-        ListeChauffeurs.DataSource = New BindingSource(comboSource, Nothing)
-        ListeChauffeurs.DisplayMember = "Value"
+        ListeChauffeurs.DataSource = donnee
+        ListeChauffeurs.DisplayMember = "CHFNOM"
+        ListeChauffeurs.ValueMember = "CHFID"
     End Sub
 
     'REMPLIT LA LISTE DES VEHICULES

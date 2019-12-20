@@ -37,6 +37,14 @@ Partial Class AC13_Modifier
         Me.Valider = New System.Windows.Forms.Button()
         Me.Retour = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Photo1 = New System.Windows.Forms.PictureBox()
+        Me.LabelHeurePhoto = New System.Windows.Forms.Label()
+        Me.Photos = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.ListePhotos = New System.Windows.Forms.ComboBox()
+        Me.PasdePhotos = New System.Windows.Forms.Label()
+        CType(Me.Photo1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Photos.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -164,17 +172,79 @@ Partial Class AC13_Modifier
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(0, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(461, 32)
+        Me.Label6.Size = New System.Drawing.Size(989, 32)
         Me.Label6.TabIndex = 31
         Me.Label6.Text = "AC13 - Modifier une étape"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        '
+        'Photo1
+        '
+        Me.Photo1.ImageLocation = ""
+        Me.Photo1.Location = New System.Drawing.Point(32, 56)
+        Me.Photo1.Name = "Photo1"
+        Me.Photo1.Size = New System.Drawing.Size(334, 256)
+        Me.Photo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Photo1.TabIndex = 32
+        Me.Photo1.TabStop = False
+        '
+        'LabelHeurePhoto
+        '
+        Me.LabelHeurePhoto.AutoSize = True
+        Me.LabelHeurePhoto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelHeurePhoto.Location = New System.Drawing.Point(126, 315)
+        Me.LabelHeurePhoto.Name = "LabelHeurePhoto"
+        Me.LabelHeurePhoto.Size = New System.Drawing.Size(149, 20)
+        Me.LabelHeurePhoto.TabIndex = 33
+        Me.LabelHeurePhoto.Text = "LabelHeurePhoto"
+        '
+        'Photos
+        '
+        Me.Photos.Controls.Add(Me.Label7)
+        Me.Photos.Controls.Add(Me.ListePhotos)
+        Me.Photos.Controls.Add(Me.LabelHeurePhoto)
+        Me.Photos.Controls.Add(Me.Photo1)
+        Me.Photos.Location = New System.Drawing.Point(535, 94)
+        Me.Photos.Name = "Photos"
+        Me.Photos.Size = New System.Drawing.Size(402, 346)
+        Me.Photos.TabIndex = 34
+        Me.Photos.TabStop = False
+        Me.Photos.Text = "Photos"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(29, 27)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(95, 13)
+        Me.Label7.TabIndex = 35
+        Me.Label7.Text = "Choix de la photo :"
+        '
+        'ListePhotos
+        '
+        Me.ListePhotos.FormattingEnabled = True
+        Me.ListePhotos.Location = New System.Drawing.Point(130, 19)
+        Me.ListePhotos.Name = "ListePhotos"
+        Me.ListePhotos.Size = New System.Drawing.Size(121, 21)
+        Me.ListePhotos.TabIndex = 34
+        '
+        'PasdePhotos
+        '
+        Me.PasdePhotos.AutoSize = True
+        Me.PasdePhotos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasdePhotos.Location = New System.Drawing.Point(531, 61)
+        Me.PasdePhotos.Name = "PasdePhotos"
+        Me.PasdePhotos.Size = New System.Drawing.Size(373, 20)
+        Me.PasdePhotos.TabIndex = 36
+        Me.PasdePhotos.Text = "Aucune photo n'est associée à cette étape ..."
+        Me.PasdePhotos.Visible = False
         '
         'AC13_Modifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.YellowGreen
-        Me.ClientSize = New System.Drawing.Size(461, 513)
+        Me.ClientSize = New System.Drawing.Size(989, 513)
+        Me.Controls.Add(Me.PasdePhotos)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Retour)
         Me.Controls.Add(Me.Valider)
@@ -188,8 +258,12 @@ Partial Class AC13_Modifier
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Photos)
         Me.Name = "AC13_Modifier"
-        Me.Text = "AC13-Ajouter"
+        Me.Text = " "
+        CType(Me.Photo1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Photos.ResumeLayout(False)
+        Me.Photos.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -208,4 +282,10 @@ Partial Class AC13_Modifier
     Friend WithEvents Valider As System.Windows.Forms.Button
     Friend WithEvents Retour As System.Windows.Forms.Button
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Photo1 As System.Windows.Forms.PictureBox
+    Friend WithEvents LabelHeurePhoto As System.Windows.Forms.Label
+    Friend WithEvents Photos As System.Windows.Forms.GroupBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents ListePhotos As System.Windows.Forms.ComboBox
+    Friend WithEvents PasdePhotos As System.Windows.Forms.Label
 End Class

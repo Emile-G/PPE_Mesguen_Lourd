@@ -28,7 +28,6 @@ Partial Class AC12_Modifier
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LabelVehicule = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TRNDTE = New System.Windows.Forms.DateTimePicker()
         Me.ListeChauffeurs = New System.Windows.Forms.ComboBox()
         Me.ListeVehicules = New System.Windows.Forms.ComboBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -40,6 +39,7 @@ Partial Class AC12_Modifier
         Me.Ajouter = New System.Windows.Forms.Button()
         Me.Modifier = New System.Windows.Forms.Button()
         Me.Supprimer = New System.Windows.Forms.Button()
+        Me.TRNDTE = New System.Windows.Forms.DateTimePicker()
         CType(Me.GrilleEtapes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -98,15 +98,6 @@ Partial Class AC12_Modifier
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "AC12 - Modifier une tournée"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        '
-        'TRNDTE
-        '
-        Me.TRNDTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TRNDTE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.TRNDTE.Location = New System.Drawing.Point(245, 83)
-        Me.TRNDTE.Name = "TRNDTE"
-        Me.TRNDTE.Size = New System.Drawing.Size(248, 26)
-        Me.TRNDTE.TabIndex = 10
         '
         'ListeChauffeurs
         '
@@ -223,6 +214,16 @@ Partial Class AC12_Modifier
         Me.Supprimer.Text = "Supprimer"
         Me.Supprimer.UseVisualStyleBackColor = False
         '
+        'TRNDTE
+        '
+        Me.TRNDTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TRNDTE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.TRNDTE.Location = New System.Drawing.Point(245, 83)
+        Me.TRNDTE.Name = "TRNDTE"
+        Me.TRNDTE.Size = New System.Drawing.Size(248, 26)
+        Me.TRNDTE.TabIndex = 10
+        Me.TRNDTE.Value = New Date(2019, 12, 18, 15, 48, 0, 0)
+        '
         'AC12_Modifier
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -260,7 +261,6 @@ Partial Class AC12_Modifier
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents LabelVehicule As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TRNDTE As System.Windows.Forms.DateTimePicker
     Friend WithEvents ListeChauffeurs As System.Windows.Forms.ComboBox
     Friend WithEvents ListeVehicules As System.Windows.Forms.ComboBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
@@ -272,4 +272,5 @@ Partial Class AC12_Modifier
     Friend WithEvents Ajouter As System.Windows.Forms.Button
     Friend WithEvents Modifier As System.Windows.Forms.Button
     Friend WithEvents Supprimer As System.Windows.Forms.Button
+    Friend WithEvents TRNDTE As System.Windows.Forms.DateTimePicker
 End Class
